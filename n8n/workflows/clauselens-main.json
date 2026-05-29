@@ -1,0 +1,386 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "operation": "pdf",
+        "binaryPropertyName": "file",
+        "options": {}
+      },
+      "id": "74e89f2d-f691-48d8-a778-d05b23a0cfae",
+      "name": "Extract from File",
+      "type": "n8n-nodes-base.extractFromFile",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -560
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "a1b2c3d4-0004-4000-8000-000000000004",
+              "name": "contenuDocument",
+              "type": "string",
+              "value": "={{ $json.text }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "35fa52d3-0af1-47d9-82a8-35ec9a2a7441",
+      "name": "Expose Text",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        64,
+        -560
+      ]
+    },
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "clause-radar",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -672,
+        32
+      ],
+      "id": "a5f24665-fee5-4a5e-b736-e5be373c7790",
+      "name": "Webhook",
+      "webhookId": "f766c9d8-f771-4517-b3b9-6ef6a9d7c44c"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.body.source }}",
+                    "rightValue": "pdfFile",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "27eaa03d-c012-4e13-89f9-fce53fb16ade"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "b463a684-b00c-4fde-8541-e5cd522c97c3",
+                    "leftValue": "={{ $json.body.source }}",
+                    "rightValue": "raw",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -400,
+        32
+      ],
+      "id": "171721ff-8541-4b4d-bad2-18c472ebd5f2",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "APJXCLHMGYGSnpiE",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/APJXCLHMGYGSnpiE",
+          "cachedResultName": "ClauseRadarIA"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contenuDocument": "={{ $json.body.text }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "contenuDocument",
+              "displayName": "contenuDocument",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -160,
+        320
+      ],
+      "id": "18a6518b-4947-475a-a3af-0b8418334638",
+      "name": "Execute Workflow"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "APJXCLHMGYGSnpiE",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/APJXCLHMGYGSnpiE",
+          "cachedResultName": "Sub Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contenuDocument": "={{ $json.contenuDocument }}"
+          },
+          "matchingColumns": [
+            "contenuDocument"
+          ],
+          "schema": [
+            {
+              "id": "contenuDocument",
+              "displayName": "contenuDocument",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        288,
+        -560
+      ],
+      "id": "10eec0f3-9b59-4931-98c4-33ac0f9671e0",
+      "name": "Execute Workflow1"
+    },
+    {
+      "parameters": {
+        "content": "### 📚 Workflow déclenché par la soumission d'un document pdf",
+        "height": 508,
+        "width": 940,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -256,
+        -704
+      ],
+      "typeVersion": 1,
+      "id": "81bd2dc5-7207-4eff-a532-dd3bcadb0c24",
+      "name": "Sticky Note4"
+    },
+    {
+      "parameters": {
+        "content": "### 📚 Workflow déclenché par la soumission d'un texte",
+        "height": 508,
+        "width": 940,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -208,
+        112
+      ],
+      "typeVersion": 1,
+      "id": "56c11d41-0d07-4542-aeb2-08be754e8ac0",
+      "name": "Sticky Note5"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        496,
+        -560
+      ],
+      "id": "07cfaeb0-f00a-4ad4-8249-f116b5739341",
+      "name": "Respond to Webhook"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        48,
+        320
+      ],
+      "id": "08162771-33fb-4423-aea9-9465d19565f0",
+      "name": "Respond to Webhook1"
+    }
+  ],
+  "connections": {
+    "Extract from File": {
+      "main": [
+        [
+          {
+            "node": "Expose Text",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Expose Text": {
+      "main": [
+        [
+          {
+            "node": "Execute Workflow1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "Extract from File",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Execute Workflow",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow1": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {
+    "Webhook": [
+      {
+        "headers": {
+          "host": "n8n.srv1150703.hstgr.cloud",
+          "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36",
+          "content-length": "11201",
+          "accept": "*/*",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7,it;q=0.6",
+          "content-type": "application/json",
+          "dnt": "1",
+          "origin": "null",
+          "priority": "u=1, i",
+          "sec-ch-ua": "\"Chromium\";v=\"148\", \"Google Chrome\";v=\"148\", \"Not/A)Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\"",
+          "sec-fetch-dest": "empty",
+          "sec-fetch-mode": "cors",
+          "sec-fetch-site": "cross-site",
+          "x-forwarded-for": "80.215.224.237",
+          "x-forwarded-host": "n8n.srv1150703.hstgr.cloud",
+          "x-forwarded-port": "443",
+          "x-forwarded-proto": "https",
+          "x-forwarded-server": "e5fe4341f5d4",
+          "x-real-ip": "80.215.224.237"
+        },
+        "params": {},
+        "query": {},
+        "body": {
+          "source": "raw",
+          "text": "SERVICE DE NAVIGATION INTERNET WI-FI OFFERT PAR ICOMERA AB EN TANT QUE CONTRÔLEUR DE DONNÉES : CONDITIONS D’UTILISATION ET POLITIQUE DE TRAITEMENT DES DONNÉES\n \n\nImportant\nVous devez lire les termes et conditions suivants avant d’accéder et d’utiliser le service Wi-Fi. En accédant et en utilisant le service Wi-Fi, vous acceptez d’être lié par les modalités énoncées ci-dessous. Si vous ne voulez pas être lié par les termes et conditions suivants, vous n’aurez pas besoin d’accéder et d’utiliser le service Wi-Fi.\n\nDéfinitions\nIcomera AB est le service de navigation Internet Wi-Fi du Frecciaplay; Icomera AB signifie le fournisseur de services Wi-Fi; Informations \" désigne tous les matériaux transmis par Icomera AB via le service Wi-Fi; « User » identifie l’utilisateur final du service Wi-Fi. « Contrat » signifie cet accord pour l’utilisation du service Wi-Fi.\n\nGarantie\nLe service Wi-Fi est fourni « tel quel » et « disponible » et Icomera AB ne fait aucune garantie ou déclaration, expresse ou implicite, dans le cadre de l’information, y compris les garanties implicites ou l’exhaustivité, l’exactitude, la qualité satisfaisante ou l’aptitude à une fin particulière.\n\nResponsabilité\nVous convenez que, sauf en cas de décès et de blessures corporelles dus à la négligence d’Icomera AB, Icomera AB n’est pas responsable de tout dommage de quelque nature que ce soit, direct ou indirect, découlant ou autrement lié à cet accord, y compris les dommages-intérêts pour perte d’entreprise, perte de bénéfices, interruption d’activité, perte d’informations commerciales ou toute autre perte pécuniaire (même si Icomera AB a été informée de la possibilité d’une telle perte ou dommage).\n\nService Wi-Fi\nVous reconnaissez: a) qu’il est techniquement impossible de fournir un service Wi-Fi totalement sans défaut et qu’Icomera AB ne s’y engage pas; b) que tout défaut peut entraîner l’indisponibilité temporaire du service Wi-Fi; c) que le fonctionnement du service Wi-Fi peut être affecté par des circonstances et des activités indépendantes de la volonté d’Icomera AB, y compris les transmissions, les liaisons de télécommunications entre Icomera AB et les utilisateurs, entre les différentes structures d’Icomera AB et celles entre Icomera AB et d’autres systèmes ou réseaux.\n\nIcomera AB ne garantit pas la sécurité et la confidentialité du service Wi-Fi et des informations ou communications transmises par l’Utilisateur via le service Wi-Fi.\n\nInformations provenant de tiers\nVous reconnaissez également que certaines informations, telles que les logiciels, sont fournies à Icomera AB (directement et indirectement) par des tiers et, par conséquent, Icomera AB ne peut offrir aucune garantie d’aucune sorte dans le cadre de ces informations.\n\n\n\n \n\nUtilisation du service Wi-Fi – Compensation.\n \n\nVous vous engagez à :\n\n•       n’utilisez pas le service Wi-Fi à des fins illicites.\n\n•       n’utilisez pas le service Wi-Fi de manière à ce que le service soit complètement ou complètement interrompu, endommagé, rendu moins efficace ou que l’efficacité ou le fonctionnement du service Wi-Fi soit en aucune façon limité.\n\n•       n’utilisez pas le service Wi-Fi pour la transmission ou la propagation de virus informatiques ou diffamatoires, offensants, obscènes, menaçants ou causant du harcèlement, de l’inconfort ou une alarme non fondée.\n\n•       n’utilisez pas le service Wi-Fi d’une manière qui viole ou restreint les droits de toute personne naturelle ou légale (y compris les droits d’auteur ou deconfidentialité).\n\n•       n’utilisez pas le service Wi-Fi pour transmettre de la publicité et/ou du matériel promotionnel sans le consentement écrit préalable d’Icomera AB, à moins qu’une telle transmission n’ait été spécifiquement demandée par un autre utilisateur du service Wi-Fi.\n\n•       en cas d’exercice de son propre droit, ou de plainte ou d’action contre tout autre utilisateur découlant de l’utilisation du service Wi-Fi, vous exercerez ce droit, plainte ou action indépendamment et sans la participation d’Icomera AB. Vous garderez Icomera AB indemne et engagée par toute réclamation, responsabilité, dommages, frais et dépenses, y compris les frais juridiques, résultant d’une violation de cet accord ou de votre utilisation du service Wi-Fi. Vous reconnaissez qu’Icomera AB n’a aucun contrôle sur la nature ou le contenu des informations ou des programmes transmis ou reçus par vous via le service Wi-Fi et qu’Icomera AB ne contrôle en rien votre utilisation du service Wi-Fi. Vous acceptez de garder Icomera AB totalement libre de toute réclamation ou action en justice découlant de votre utilisation du service Wi-Fi, promu ou menacé contre Icomera AB par toute autre personne.\n\nPropriété intellectuelle\nVous reconnaissez que le droit d’auteur, les marques et tous les autres droits de propriété intellectuelle liés au service Wi-Fi demeurent la propriété d’ICOMERA ou de ses licences.\n\nSuspension et résolution\nIcomera AB se réserve le droit de résilier immédiatement cet accord et/ou de suspendre le wi-fi en cas de violation par vous de cet accord.\n\nModifications apportées au contrat\nIcomera AB se réserve le droit de modifier périodiquement les modalités d’utilisation du service en saisissant un avis de la modification apportée dans ce document. L’utilisation supplémentaire du service par l’Utilisateur après l’introduction de l’avis de ce changement sera considérée comme l’acceptation par l’Utilisateur du changement lui-même. Il est de votre responsabilité de consulter régulièrement ce document pour voir si l’Accord a été modifié. Si vous n’acceptez pas de modifier les conditions d’utilisation, vous devez immédiatement cesser d’utiliser le service Wi-Fi.\n\nInefficacité partielle\nToute disposition de cet Accord visant à exclure ou à limiter la responsabilité doit être prise en compte séparément des autres et conserver son efficacité même si une ou plusieurs de ces dispositions sont inapplicables ou inefficaces ou dans le cas où cet Accord cesserait d’avoir effet pour quelque raison que ce soit.\n\nRéserver\nToute tolérance de la part d’Icomera AB à l’égard de toute conduite que vous avez commise en violation des dispositions contenues dans le cadre de cet Accord ne constitue pas une renonciation aux droits qui en découlent.\n\nDroit applicable\nCet accord est régi par le droit italien et les parties acceptent irrévocablement de revenir à la compétence exclusive des tribunaux italiens.\n\nS’il vous plaît prêter attention à votre appareil sans fil. Icomera AB n’assume aucune responsabilité pour toute perte ou dommage.\n\n•       Politique de confidentialité\n\nConformément à l’article 13 du règlement de l’UE 2016/679 («Règlement») nousvous fournissons les informations suivantes concernant le traitement de vos données personnelles. Le contrôleur de données est Icomera AB, basé à\n\nOdinsgatan 28, S-411 03, Göteborg, Suède Téléphone +46 (0)31-799 21 00\n\nL’agent de protection:\n\nE-mail: dpo@icomera.com\n\n•       Type de données traitées et origine des données\n\nLe contrôleur de données traite les données personnelles suivantes: adresse MAC (identification de l’appareil), localisation GPS du véhicule, adresse IP, timestamp et ID de session. Ces données sont acquises par le contrôleur de données sur la base de sa connexion et de l’utilisation du service Wi-Fi.\n\n•       But et base juridique du traitement\n\nVos données personnelles seront traitées exclusivement aux fins suivantes :\n\n·         fournir un service Wi-Fi;\n\nMaintenir la qualité du service;\n\n·         fournir un soutien en cas de problèmes.\n\n·         Ce traitement est nécessaire pour exécuter un contrat auquel l’Utilisateur est partie. Le traitement de vos données personnelles est en fait une condition nécessaire pour permettre au contrôleur de données de vous fournir le service Wi-Fi, de sorte que l’échec ou l’acquisition incomplète de données rendrait impossible l’utilisation du service.\n\n·         Comment les données sont traitées et stockées\n\nVos données personnelles seront traitées avec des outils informatiques et télématiques conformément à la législation actuelle sur la protection des données personnelles, en particulier les principes de légalité, de justesse, de transparence, de minimisation, d’exactitude, d’intégrité et de confidentialité et afin de garantir, par l’adoption de mesures organisationnelles et techniques appropriées, leur sécurité et leur protection contre le traitement non autorisé et illégal, contre les pertes, les destructions et les dommages accidentels.\n\nLes données seront stockées dans les archives électroniques du responsable du traitement pendant une période maximale de 72 mois à compter de la collecte conformément à l’article 24 de la loi italienne n.167 du20 novembre 2017.\n\n•       Destinataires ou catégories de destinataires de données\n\nLes données seront traitées exclusivement par le personnel du contrôleur des données officiellement autorisé à les traiter dans le cadre de leurs fonctions et dans les limites de ce qui est strictement nécessaire pour mener à bien leur activité. Les données ne seront en aucune façon diffusées et ne seront pas transférées aux pays tiers.\n\n•       Droits du sujet de données\n\nConformément aux règles de procédure, vous pourrez - en tant que partie intéressée - exercer les droits suivants à tout moment, dans les conditions énoncées dans le Règlement de procédure :\n\n•       le droit d’obtenir confirmation du contrôleur des données s’il y a ou non un traitement des données personnelles vous concernant et, le cas dernier, d’obtenir l’accès à ces données;\n\n•       droit d’obtenir la rectification et la suppression des données personnelles vous concernant;\n\n•       droit d’obtenir la limitation du traitement de vos données;\n\n•       droit de recevoir vos données personnelles dans un format structuré, utilisé de manière courante et lisible par appareil automatique (portabilité des données so-s.);\n\n•       droit de s’opposer au traitement de vos données personnelles.\n\n \n\nCes droits peuvent être exercés gratuitement par vous en envoyant une demande par e-mail à l’adresse dpo@icomera.com. En outre, conformément à l’art. En vertu de l’article 77, vous avez le droit de déposer une plainte auprès de l’autorité de surveillance compétente si vous considérez que le traitement des données personnelles vous concernant ne respecte pas les règles de procédure.\n\nPour plus d’informations et/ou de rapports concernant le traitement de vos données personnelles, vous pouvez contacter le Contrôleur de Données ou le DPO aux adresses indiquées ci-dessus."
+        },
+        "webhookUrl": "https://n8n.srv1150703.hstgr.cloud/webhook/clause-radar",
+        "executionMode": "production"
+      }
+    ]
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "f6b970a4fcdb4487467edac99534136ecac96ec07e9589b2ec3d94caeb1711ff"
+  }
+}

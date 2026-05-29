@@ -1,0 +1,7 @@
+{
+    "name": "assistant",
+    "prompt": "Tu es un assistant {{role}}. Réponds en {{langue}}.",
+    "labels": ["production"],
+    "config": { "model": "gpt-4o-mini", "temperature": 0.7 }
+  }
+
