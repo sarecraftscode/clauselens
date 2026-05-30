@@ -316,15 +316,13 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 ## Roadmap
 
 ```
-Phase 1 — MVP          Phase 2 — Stabilisation     Phase 3 — Enrichissement    Phase 4 — Scale
+Phase 1 — Lancement    Phase 2 — Consolidation     Phase 3 — Enrichissement    Phase 4 — Expansion
 ~1 mois                ~3 mois                      ~6 mois                     ~9 mois
 ──────────────────     ─────────────────────────    ─────────────────────────   ──────────────────────
-✅ MVP fonctionnel     🧪 Tests sur 10 utilisateurs  ⚖️ IHM juriste              🔊 Résumé audio
-🏗️ Architecture        🔒 Sécurisation de l'IHM     📑 Nouveaux types de docs   🌍 Multilingue
-   à jour              🔧 Amélioration des prompts                               📱 Mobile + OCR
-                       🎨 Amélioration UX résultat                               🔌 Serveur MCP
-                       🔗 Traçabilité dans le résultat
-                       🎯 Amélioration détection type
+✅ MVP fonctionnel     🔧 Amélioration des prompts  ⚖️ IHM juriste              🔊 Résumé audio
+🔒 Sécurisation IHM    🎨 Amélioration UX résultat  📑 Nouveaux types de docs   🌍 Multilingue
+🧪 Tests 10 utilis.    🔗 Traçabilité dans résultat                             📱 Mobile + OCR
+                       🎯 Détection type améliorée                              🔌 Serveur MCP
                        📏 Gestion documents longs
 
 ──────────────────────────────────────────────────────────────────────────────────────────────
