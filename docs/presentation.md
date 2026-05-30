@@ -229,7 +229,9 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 
 # Merci
 
-**ClauseLens** — Comprendre avant de signer
+**ClauseLens** utilise l'IA pour réduire la charge de lecture
+et améliorer la compréhension des conditions générales,
+tout en gardant l'humain au centre de la décision.
 
 > *"Un document illisible ne devrait pas rester illisible."*
 
