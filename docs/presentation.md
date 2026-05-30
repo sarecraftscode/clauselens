@@ -220,15 +220,20 @@ RGPD & EU AI Act
 
 ## EU AI Act — Niveaux de risque
 
-| Niveau | Exemples | Obligation |
-|---|---|---|
-| 🚫 **Inacceptable** | Notation sociale, surveillance biométrique en temps réel | Interdit |
-| 🔴 **Élevé** | Recrutement, crédit, justice, infrastructures critiques | Évaluation de conformité obligatoire |
-| 🟡 **Limité** | Chatbots, assistants IA, systèmes de recommandation | Transparence envers l'utilisateur |
-| 🟢 **Minimal** | Filtres anti-spam, jeux vidéo, IA de productivité | Aucune obligation spécifique |
+🚫 **Inacceptable** — Interdit *(notation sociale, surveillance biométrique)*
+🔴 **Élevé** — Conformité obligatoire *(recrutement, crédit, justice)*
+🟡 **Limité** — Transparence requise *(chatbots, assistants IA)*
+🟢 **Minimal** — Aucune obligation *(filtres anti-spam, jeux vidéo)*
 
-**ClauseLens → Risque limité 🟡** — assiste sans décider, l'utilisateur reste maître de sa signature.
-Obligation : informer l'utilisateur qu'il interagit avec un système d'IA.
+---
+
+<br>
+
+> ### ClauseLens — Risque limité 🟡
+>
+> Assiste sans décider — l'utilisateur reste maître de sa signature.
+>
+> **Obligation** : l'utilisateur est informé qu'il interagit avec une IA avant toute analyse.
 
 ---
 
