@@ -67,14 +67,6 @@ style: |
 
 ---
 
-<!-- _class: divider -->
-
-## Contexte
-
-Le problème que personne ne voit venir
-
----
-
 ## Ce que font les Français chaque jour
 
 > **41,6 millions** de Français ont effectué au moins un achat en ligne —
