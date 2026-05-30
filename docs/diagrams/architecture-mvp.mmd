@@ -1,17 +1,15 @@
-flowchart LR
-  UI["🌐\nInterface\nWeb"]
+flowchart TD
+  UI["🌐 Interface Web"]
+  PR["📚 Prompt Registry\n& Observabilité"]
 
   subgraph ORCH["⚙️ Orchestration"]
-    direction TB
-    DT["🔍 Détection\ndu type"]
-    GP["📋 Récupération\ndu prompt\nd'extraction"]
-    EX["🤖 Extraction\ndes clauses"]
+    DT["🔍 Détection du type"]
+    GP["📋 Récupération du prompt d'extraction"]
+    EX["🤖 Extraction des clauses"]
     DT --> GP --> EX
   end
 
-  subgraph INFRA["🏗️ Plateforme IA"]
-    direction TB
-    PR["📚 Prompt Registry\n& Observabilité"]
+  subgraph LLM_STACK["🏗️ Plateforme LLM"]
     PROXY["⚡ LLM Proxy"]
     LLM["🧠 Modèles IA"]
     PROXY --> LLM
@@ -19,7 +17,7 @@ flowchart LR
 
   UI -->|"document"| DT
   EX -->|"résumé"| UI
-  PR <-->|"prompt détection"| DT
-  PR <-->|"prompt extraction"| GP
-  EX <-->|"appels LLM"| PROXY
-  DT <-->|"appels LLM"| PROXY
+  PR -->|"prompt détection"| DT
+  PR -->|"prompt extraction"| GP
+  DT <-->|"appel LLM"| PROXY
+  EX <-->|"appel LLM"| PROXY
