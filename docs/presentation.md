@@ -303,7 +303,6 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 | 🔀 **Mauvaise classification** | Un document peut être pris pour un autre (ex : CGV vs conditions bancaires) |
 | 📄 **Documents composés** | CGV + CGU dans le même fichier (ex : SNCF) — seule une partie est extraite |
 | 📉 **Drift de détection** | Formulations inhabituelles ou atypiques dégradent la classification |
-| 📚 **Pas de base de connaissance** | Aucun RAG — pas de croisement avec le Code civil ou le Code des assurances |
 
 ---
 
