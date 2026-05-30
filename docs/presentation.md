@@ -178,7 +178,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ---
 
-## Vision juriste — Le rôle des prompts
+## Vision juriste
 
 ![Vision juriste w:1000](diagrams/vision-juriste.png)
 
