@@ -157,11 +157,15 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 | Rôle | Responsabilité |
 |---|---|
-| **Juristes** | Définir les clauses importantes par type, rédiger et affiner les prompts |
+| **Sponsor / Porteur de projet** | Décisions stratégiques, validation des orientations, déblocage des ressources |
 | **Product Manager** | Priorisation, roadmap, coordination |
-| **Développeur IA** | Architecture LLM, guardrails, intégrations |
+| **Juristes** | Définir les clauses importantes par type, rédiger et affiner les prompts |
+| **Partenaires juridiques** | Légitimité de l'approche, validation externe de la qualité juridique |
+| **Développeur IA / MLOps** | Architecture LLM, guardrails, déploiement, monitoring |
+| **Évaluateur qualité LLM** | Mesure systématique de la qualité des extractions, benchmarking |
 | **Développeur frontend** | Interface utilisateur |
 | **UX Designer** | Expérience de lecture, présentation des résultats |
+| **DPO / Responsable RGPD** | Conformité traitement des données, analyse d'impact (DPIA) |
 | **Utilisateurs finaux** | Tests, retours, validation de l'utilité |
 
 ---
