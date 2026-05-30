@@ -1459,6 +1459,7 @@
           <div>
             <p class="section-label">Résultat de l'analyse</p>
             <span class="result-badge" id="resultBadge">—</span>
+            <span id="resultTiming" style="margin-left:12px;font-size:0.78em;color:#64748b;font-weight:400;"></span>
           </div>
           <button class="btn-reset" id="btnReset">
             ↩ &nbsp;Nouvelle analyse
@@ -1691,6 +1692,7 @@
         }
 
         setLoading(true);
+        const t0 = performance.now();
         try {
           let response;
           if (activeMethod === "pdf") {
@@ -1724,9 +1726,11 @@
             html = await response.text();
           }
 
+          const elapsed = ((performance.now() - t0) / 1000).toFixed(1);
           resultContent.innerHTML = html;
           initAccordion();
 
+          document.getElementById("resultTiming").textContent = `⏱ ${elapsed} s`;
           resultBadge.textContent =
             activeMethod === "pdf"
               ? selectedFile.name
