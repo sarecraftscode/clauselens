@@ -153,22 +153,6 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ---
 
-## Périmètre du MVP
-
-✅ **7 types de documents** — CGV · CGA · CGU · CG Abonnement · CG Assurance · CG Garantie · CG Location
-
-✅ **Deux modes de saisie** — texte collé ou import de fichier PDF
-
-✅ **Interface web** — accessible depuis un navigateur, sans installation
-
-✅ **Sortie HTML structurée** — résumé hiérarchisé des clauses importantes
-
-✅ **Langue française** — documents en français uniquement
-
-✅ **Stack auto-hébergée** — déployable sur un serveur ou en local via Docker
-
----
-
 ## Parties prenantes
 
 | Rôle | Responsabilité |
@@ -179,6 +163,23 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 | **UX Designer** | Expérience de lecture, présentation des résultats |
 | **DPO (Délégué à la Protection des Données)** | Conformité traitement des données, analyse d'impact (DPIA — Data Protection Impact Assessment) |
 | **Utilisateurs finaux** | Tests, retours, validation de l'utilité |
+
+---
+
+## Périmètre du MVP
+
+✅ **7 types de documents**
+Conditions Générales de Vente · d'Achat · d'Utilisation · d'Abonnement · d'Assurance · de Garantie · de Location
+
+✅ **Deux modes de saisie** — texte collé ou import de fichier PDF
+
+✅ **Interface web** — accessible depuis un navigateur, sans installation
+
+✅ **Sortie HTML structurée** — résumé hiérarchisé des clauses importantes
+
+✅ **Langue française** — documents en français uniquement
+
+✅ **Stack auto-hébergée** — déployable sur un serveur ou en local via Docker
 
 ---
 
