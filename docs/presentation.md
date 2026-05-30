@@ -194,60 +194,25 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Coûts
 
-Infra · Modèles · Scénarios
-
 ---
 
-## Coût par analyse — Infrastructure
+## Coût d'une analyse — Exemple concret
 
-| Composant | Rôle | Coût mensuel estimé |
-|---|---|---|
-| VPS cloud EU (4 vCPU, 8 Go RAM) | Héberge toute la stack Docker | ~40 €/mois |
-| Stockage PostgreSQL + Redis | Données, cache, sessions | inclus VPS |
-| Langfuse (self-hosted) | Traces + prompts | inclus VPS |
-| n8n (self-hosted) | Orchestration | inclus VPS |
-| LiteLLM (self-hosted) | Proxy LLM + cache | inclus VPS |
-| Nom de domaine + SSL | Accès public sécurisé | ~1 €/mois |
-| **Total infrastructure** | | **~41 €/mois** |
+**Document : contrat de 35 pages** ≈ 17 500 tokens
 
-> En développement local (WSL, Mac) : coût infrastructure = **0 €**
+<br>
 
----
-
-## Coût par analyse — Appels LLM
-
-Hypothèse : document moyen de **8 000 tokens** (≈ 6 000 mots)
-
-| Étape | Modèle | Tokens (entrée / sortie) | Coût estimé |
+| Étape | Tokens envoyés | Tokens reçus | Coût estimé |
 |---|---|---|---|
-| Détection du type | Mistral Small | 2 500 / 20 | ~0,001 $ |
-| Extraction des clauses | GPT-4o mini | 9 500 / 800 | ~0,002 $ |
-| Extraction des clauses | GPT-4.1 mini | 9 500 / 800 | ~0,005 $ |
-| Extraction des clauses | Claude Haiku 3.5 | 9 500 / 800 | ~0,011 $ |
+| 🔍 Détection du type | ~2 500 | ~20 | ~0,001 $ |
+| 🤖 Extraction des clauses | ~18 500 | ~800 | ~0,003 $ |
+| **Total** | | | **< 0,005 $** |
 
-**Coût total par analyse (GPT-4o mini) : ~0,003 $** soit **< 0,003 €**
+<br>
 
-> Le cache Redis (LiteLLM) permet de réutiliser les résultats pour un même document — coût LLM = 0 sur un cache hit.
-
----
-
-## Coûts — Scénarios par volume
-
-| Volume | Coût LLM/mois | Infra/mois | **Total/mois** | Coût/analyse |
-|---|---|---|---|---|
-| 100 analyses | ~0,30 $ | ~41 € | **~42 €** | ~0,42 € |
-| 1 000 analyses | ~3 $ | ~41 € | **~44 €** | ~0,04 € |
-| 10 000 analyses | ~30 $ | ~41 € | **~70 €** | ~0,007 € |
-| 100 000 analyses | ~300 $ | ~80 €* | **~360 €** | ~0,004 € |
-
-*\* serveur plus puissant nécessaire à partir de ~10 000 analyses/mois*
-
-### Leviers d'optimisation
-
-- 🔄 **Cache LiteLLM** — élimine les appels redondants sur documents identiques
-- ⚖️ **Routing par modèle** — Mistral pour la détection, GPT-4o mini pour l'extraction
-- ✂️ **Troncature intelligente** — envoyer uniquement les sections pertinentes au LLM
-- 📦 **Traitement par batch** — regrouper les analyses pour amortir les coûts fixes
+> **Moins d'un centime** pour analyser 35 pages en quelques minutes.
+>
+> À titre de comparaison, une consultation juridique pour lire ce même document coûte plusieurs centaines d'euros.
 
 ---
 
