@@ -313,40 +313,19 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 
 ---
 
-## Court terme — ~1 mois
+## Roadmap
 
-| | |
-|---|---|
-| ✅ | MVP fonctionnel — interface web, stack complète |
-| 📄 | 7 types de documents : `CGV` · `CGA` · `CG Abonnement` · `CG Assurance` · `CGU` · `CG Garantie` · `CG Location` |
-| 🧪 | Tests internes et validation de la qualité d'extraction |
-| 🏗️ | Mise à jour de l'architecture selon les retours techniques |
-| 👥 | Déploiement à un échantillon réduit d'utilisateurs |
-
----
-
-## Moyen terme — ~3 mois
-
-| | |
-|---|---|
-| 🔧 | Amélioration des prompts suite aux premières utilisations réelles |
-| 💰 | Optimisation des coûts (modèles, cache, routing LiteLLM) |
-| 🎨 | Hiérarchisation et priorisation des clauses pour une meilleure UX |
-| 📖 | Amélioration de l'UX sur le résultat pour faciliter la lecture |
-| ⚖️ | IHM dédiée aux juristes pour identifier et valider les clauses importantes |
-| 📚 | RAG sur documents de référence (Code civil, Code des assurances) |
-
----
-
-## Long terme — ~9 mois
-
-| | |
-|---|---|
-| 🔊 | Résumé audio des clauses importantes |
-| 🌍 | Support multilingue |
-| 📑 | Prise en charge de nouveaux types de documents |
-| 📱 | Application mobile avec OCR pour les versions papier |
-| 🤖 | Serveur MCP — accessibilité depuis les chatbots (ChatGPT, Claude…) |
+```
+Phase 1 — MVP          Phase 2 — Stabilisation     Phase 3 — Enrichissement    Phase 4 — Scale
+~1 mois                ~3 mois                      ~6 mois                     ~9 mois
+──────────────────     ─────────────────────────    ─────────────────────────   ──────────────────────
+✅ MVP fonctionnel     🧪 Tests sur 10 utilisateurs  ⚖️ IHM juriste              🔊 Résumé audio
+🏗️ Architecture        🔒 Sécurisation de l'IHM     📚 RAG (Code civil…)        🌍 Multilingue
+   à jour              🔧 Amélioration des prompts   🤖 Modèle dédié si besoin   📱 Mobile + OCR
+                       🎨 Amélioration UX résultat   📖 Meilleure hiérarchisation 🔌 Serveur MCP
+                       🐛 Correction des limites MVP  📑 Nouveaux types de docs
+                          détectées
+```
 
 ---
 
