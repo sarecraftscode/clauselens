@@ -108,10 +108,6 @@ style: |
 
 ## Problématique
 
----
-
-<br><br>
-
 > ### Comment aider les utilisateurs à identifier rapidement les clauses importantes d'une condition générale **sans remplacer l'expertise juridique ?**
 
 ---
