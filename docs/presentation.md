@@ -201,6 +201,22 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 
 ---
 
+## Limites et difficultés rencontrées — MVP
+
+| Limite | Description |
+|---|---|
+| ⏳ **Temps d'attente** | Long sur les documents volumineux — le LLM traite l'intégralité du texte |
+| 🧠 **Limite du modèle** | Contrainte sur le nombre de tokens par minute (ex : GPT-4o mini) |
+| 💸 **Coût par analyse** | Chaque appel LLM a un coût — pas de mutualisation sur le MVP |
+| 🔀 **Mauvaise détection du type** | Un document peut être classé dans la mauvaise catégorie (ex : CGV vs conditions bancaires) |
+| 📄 **Documents composés** | Un document contenant plusieurs types (ex : CGV + CGU SNCF) — seule une partie est extraite |
+| 📉 **Drift de détection** | La détection du type se dégrade sur des formulations inhabituelles ou des documents atypiques |
+| 🌍 **Français uniquement** | Les documents en langue étrangère ne sont pas gérés — problème pour les achats sur plateformes étrangères |
+| 📚 **Pas de base de connaissance** | Aucun RAG — le LLM ne peut pas croiser avec le Code civil ou le Code des assurances |
+| 👥 **Scalabilité limitée** | Architecture mono-utilisateur sur le MVP — pas de gestion de charge concurrente |
+
+---
+
 ## Roadmap
 
 ### Court terme — ~1 mois
