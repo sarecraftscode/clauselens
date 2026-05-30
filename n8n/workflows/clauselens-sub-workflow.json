@@ -1,4 +1,5 @@
 {
+  "name": "ClauseLens Sub Workflow",
   "nodes": [
     {
       "parameters": {
