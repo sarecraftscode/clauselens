@@ -3,9 +3,9 @@ sequenceDiagram
   participant W as Interface Web
   participant C as ClauseLens
 
-  U->>W: Dépose son document (texte ou PDF)
-  U->>W: Clique sur Analyser
-  W->>C: Envoi du document
+  U->>W: 1. Dépose son document (texte ou PDF)
+  U->>W: 2. Clique sur Analyser
+  W->>C: 3. Envoi du document
   Note over C: Détecte le type de document<br/>Applique le prompt expert<br/>Extrait les clauses importantes
-  C-->>W: Résumé HTML structuré
-  W-->>U: Affiche les clauses clés
+  C-->>W: 4. Résumé HTML structuré
+  W-->>U: 5. Affiche les clauses clés

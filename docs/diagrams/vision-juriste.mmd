@@ -3,25 +3,22 @@ sequenceDiagram
   participant PR as Prompt Registry
   participant OR as Orchestration
   participant LLM as Modèles IA
-  actor U as Utilisateur
 
   rect rgb(219, 234, 254)
     Note over J, PR: Configuration des prompts
-    J->>PR: Définit le prompt de détection
-    J->>PR: Définit le prompt d'extraction
-    J->>PR: Valide et publie en production
+    J->>PR: 1. Définit le prompt de détection
+    J->>PR: 2. Définit le prompt d'extraction
+    J->>PR: 3. Valide et publie en production
   end
 
   rect rgb(240, 253, 244)
-    Note over U, LLM: Analyse du document
-    U->>OR: Soumet un document
-    OR->>PR: Récupère le prompt de détection
-    PR-->>OR: Prompt de détection
-    OR->>LLM: Détecte le type de document
-    LLM-->>OR: Type détecté (CGV, CGA, CGU…)
-    OR->>PR: Récupère le prompt d'extraction
-    PR-->>OR: Prompt d'extraction
-    OR->>LLM: Extrait les clauses importantes
-    LLM-->>OR: Résumé structuré
-    OR-->>U: Résumé des clauses clés
+    Note over PR, LLM: Analyse du document
+    OR->>PR: 4. Récupère le prompt de détection
+    PR-->>OR: 5. Prompt de détection
+    OR->>LLM: 6. Détecte le type de document
+    LLM-->>OR: 7. Type détecté (CGV, CGA, CGU…)
+    OR->>PR: 8. Récupère le prompt d'extraction
+    PR-->>OR: 9. Prompt d'extraction
+    OR->>LLM: 10. Extrait les clauses importantes
+    LLM-->>OR: 11. Résumé structuré
   end

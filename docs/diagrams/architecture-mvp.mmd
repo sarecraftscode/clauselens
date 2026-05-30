@@ -5,22 +5,17 @@ sequenceDiagram
   participant LP as LLM Proxy
   participant LLM as Modèles IA
 
-  UI->>OR: Envoie le document
-
-  OR->>PR: Récupère le prompt de détection
-  PR-->>OR: Prompt de détection
-
-  OR->>LP: Appel LLM — détection du type
-  LP->>LLM: Requête
-  LLM-->>LP: Type détecté (CGV, CGA, CGU…)
-  LP-->>OR: Type détecté
-
-  OR->>PR: Récupère le prompt d'extraction
-  PR-->>OR: Prompt d'extraction
-
-  OR->>LP: Appel LLM — extraction des clauses
-  LP->>LLM: Requête
-  LLM-->>LP: Clauses importantes
-  LP-->>OR: Résumé structuré
-
-  OR-->>UI: Résumé des clauses clés
+  UI->>OR: 1. Envoie le document
+  OR->>PR: 2. Récupère le prompt de détection
+  PR-->>OR: 3. Prompt de détection
+  OR->>LP: 4. Appel LLM — détection du type
+  LP->>LLM: 5. Requête
+  LLM-->>LP: 6. Type détecté (CGV, CGA, CGU…)
+  LP-->>OR: 7. Type détecté
+  OR->>PR: 8. Récupère le prompt d'extraction
+  PR-->>OR: 9. Prompt d'extraction
+  OR->>LP: 10. Appel LLM — extraction des clauses
+  LP->>LLM: 11. Requête
+  LLM-->>LP: 12. Clauses importantes
+  LP-->>OR: 13. Résumé structuré
+  OR-->>UI: 14. Résumé des clauses clés
