@@ -1,23 +1,26 @@
-flowchart TD
-  UI["🌐 Interface Web"]
-  PR["📚 Prompt Registry\n& Observabilité"]
+sequenceDiagram
+  participant UI as Interface Web
+  participant OR as Orchestration
+  participant PR as Prompt Registry
+  participant LP as LLM Proxy
+  participant LLM as Modèles IA
 
-  subgraph ORCH["⚙️ Orchestration"]
-    DT["🔍 Détection du type"]
-    GP["📋 Récupération du prompt d'extraction"]
-    EX["🤖 Extraction des clauses"]
-    DT --> GP --> EX
-  end
+  UI->>OR: Envoie le document
 
-  subgraph LLM_STACK["🏗️ Plateforme LLM"]
-    PROXY["⚡ LLM Proxy"]
-    LLM["🧠 Modèles IA"]
-    PROXY --> LLM
-  end
+  OR->>PR: Récupère le prompt de détection
+  PR-->>OR: Prompt de détection
 
-  UI -->|"document"| DT
-  EX -->|"résumé"| UI
-  PR -->|"prompt détection"| DT
-  PR -->|"prompt extraction"| GP
-  DT <-->|"appel LLM"| PROXY
-  EX <-->|"appel LLM"| PROXY
+  OR->>LP: Appel LLM — détection du type
+  LP->>LLM: Requête
+  LLM-->>LP: Type détecté (CGV, CGA, CGU…)
+  LP-->>OR: Type détecté
+
+  OR->>PR: Récupère le prompt d'extraction
+  PR-->>OR: Prompt d'extraction
+
+  OR->>LP: Appel LLM — extraction des clauses
+  LP->>LLM: Requête
+  LLM-->>LP: Clauses importantes
+  LP-->>OR: Résumé structuré
+
+  OR-->>UI: Résumé des clauses clés
