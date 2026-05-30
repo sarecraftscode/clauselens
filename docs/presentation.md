@@ -198,21 +198,15 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Coût d'une analyse — Exemple concret
 
-**Document : contrat de 35 pages** ≈ 17 500 tokens
+**Document : Conditions Générales de Location — 35 pages**
+Modèle : Mistral Small Latest (03/2025) — €0,1275 / M tokens entrée · €0,51 / M tokens sortie
+Durée d'exécution : **9,1 secondes**
 
-<br>
-
-| Étape | Tokens envoyés | Tokens reçus | Coût estimé |
+| Étape | Tokens entrée | Tokens sortie | Coût |
 |---|---|---|---|
-| 🔍 Détection du type | ~2 500 | ~20 | ~0,001 $ |
-| 🤖 Extraction des clauses | ~18 500 | ~800 | ~0,003 $ |
-| **Total** | | | **< 0,005 $** |
-
-<br>
-
-> **Moins d'un centime** pour analyser 35 pages en quelques minutes.
->
-> À titre de comparaison, une consultation juridique pour lire ce même document coûte plusieurs centaines d'euros.
+| 🔍 Détection du type | 20 988 | 3 | ~0 € |
+| 🤖 Extraction des clauses | 22 301 | 1 899 | ~0 € |
+| **Total** | **43 289** | **1 902** | **< 0,01 €** |
 
 ---
 
