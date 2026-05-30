@@ -237,25 +237,17 @@ RGPD & EU AI Act
 
 ---
 
-## RGPD — Analyse du contexte ClauseLens
+## RGPD — Position de ClauseLens
 
-Les CGV/CGU sont des **documents publics** — risque RGPD globalement faible.
+Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 
-**Pas de données personnelles :**
-téléphone entreprise, `contact@société.fr`, adresse du siège → données de **personne morale**, hors champ RGPD
+✅ Modèle hébergé en **UE** — pas de transfert de données hors Europe
+✅ Les appels API **ne servent pas à entraîner** les modèles
+✅ Le contenu du document **n'est pas stocké** après analyse
+✅ L'utilisateur est **informé** de ce qui est envoyé au LLM
 
-**Données personnelles possibles :**
-nom d'un représentant légal, email nominatif d'un DPO → **personne physique identifiable**
-
-**Ce qu'il faut traiter :**
-
-| Obligation | Action |
-|---|---|
-| Envoi à un LLM tiers | Exiger un **DPA** avec le fournisseur de modèle |
-| Transfert hors UE | Privilégier des modèles **hébergés en UE** (ex : Mistral) |
-| Rétention des données | **Ne pas stocker** le contenu du document après analyse |
-| Transparence | Informer l'utilisateur de ce qui est envoyé au LLM |
-| Entraînement des modèles | LLM configuré pour **ne pas utiliser les appels API pour entraîner les modèles** |
+⚠️ Certains documents peuvent contenir des données personnelles
+*(nom d'un représentant légal, email nominatif)* — traitement à surveiller
 
 ---
 

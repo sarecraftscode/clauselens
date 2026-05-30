@@ -2153,43 +2153,14 @@ code { background: #eff6ff; color: var(--color-primary); padding: 2px 6px; borde
 ul li { margin-bottom: 6px; }
 .stat { font-size: 2.5em; font-weight: 700; color: var(--color-primary); }
 ;" data-marpit-pagination-total="28">
-<h2 id="rgpd--analyse-du-contexte-clauselens">RGPD — Analyse du contexte ClauseLens</h2>
-<p>Les CGV/CGU sont des <strong>documents publics</strong> — risque RGPD globalement faible.</p>
-<p><strong>Pas de données personnelles :</strong><br />
-téléphone entreprise, <code>contact@société.fr</code>, adresse du siège → données de <strong>personne morale</strong>, hors champ RGPD</p>
-<p><strong>Données personnelles possibles :</strong><br />
-nom d'un représentant légal, email nominatif d'un DPO → <strong>personne physique identifiable</strong></p>
-<p><strong>Ce qu'il faut traiter :</strong></p>
-<table>
-<thead>
-<tr>
-<th>Obligation</th>
-<th>Action</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Envoi à un LLM tiers</td>
-<td>Exiger un <strong>DPA</strong> avec le fournisseur de modèle</td>
-</tr>
-<tr>
-<td>Transfert hors UE</td>
-<td>Privilégier des modèles <strong>hébergés en UE</strong> (ex : Mistral)</td>
-</tr>
-<tr>
-<td>Rétention des données</td>
-<td><strong>Ne pas stocker</strong> le contenu du document après analyse</td>
-</tr>
-<tr>
-<td>Transparence</td>
-<td>Informer l'utilisateur de ce qui est envoyé au LLM</td>
-</tr>
-<tr>
-<td>Entraînement des modèles</td>
-<td>LLM configuré pour <strong>ne pas utiliser les appels API pour entraîner les modèles</strong></td>
-</tr>
-</tbody>
-</table>
+<h2 id="rgpd--position-de-clauselens">RGPD — Position de ClauseLens</h2>
+<p>Les CGV/CGU sont des <strong>documents publics</strong> — risque faible, mais pas nul.</p>
+<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> Modèle hébergé en <strong>UE</strong> — pas de transfert de données hors Europe<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> Les appels API <strong>ne servent pas à entraîner</strong> les modèles<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> Le contenu du document <strong>n'est pas stocké</strong> après analyse<br />
+<img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> L'utilisateur est <strong>informé</strong> de ce qui est envoyé au LLM</p>
+<p><img class="emoji" draggable="false" alt="⚠️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/26a0.svg" data-marp-twemoji=""/> Certains documents peuvent contenir des données personnelles<br />
+<em>(nom d'un représentant légal, email nominatif)</em> — traitement à surveiller</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-paginate="true" data-class="divider" data-theme="default" data-style=":root {
   --color-dark: #0f172a;
