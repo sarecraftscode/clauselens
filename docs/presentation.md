@@ -105,28 +105,42 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 ## Architecture technique — Vision juriste
 
 ```
-Document entrant (texte ou PDF)
-         │
-         ▼
-┌─────────────────────┐
-│ Détection du type   │  ← Mistral (modèle léger et rapide)
-│ de document         │
-└─────────┬───────────┘
-          │ Type détecté : CGV / CGA / CGU / ...
-          ▼
-┌─────────────────────┐
-│ Sélection du prompt │  ← Prompts versionnés dans Langfuse
-│ expert (par type)   │     rédigés et validés par des juristes
-└─────────┬───────────┘
-          │ Prompt + document
-          ▼
-┌─────────────────────┐
-│ Extraction LLM      │  ← OpenAI / Anthropic (modèle puissant)
-│ des clauses clés    │
-└─────────┬───────────┘
-          │ HTML structuré
-          ▼
-   Restitution à l'utilisateur
+  JURISTE
+  │
+  │  Rôle : affiner les prompts dans Langfuse
+  │  • définir les clauses importantes par type de document
+  │  • tester et valider la qualité des extractions
+  │  • versionner les prompts (production / draft)
+  │
+  └──────────────────▶ ┌──────────────────────┐
+                        │       Langfuse        │
+                        │  Bibliothèque de      │
+                        │  prompts versionnés   │
+                        │  par type de CG       │
+                        └──────────┬───────────┘
+                                   │ Prompt sélectionné
+                                   │ selon le type détecté
+Document entrant                   │
+(texte ou PDF)                     │
+      │                            │
+      ▼                            │
+┌─────────────────────┐            │
+│ Détection du type   │            │
+│ de document         │            │
+│ (Mistral)           │            │
+└─────────┬───────────┘            │
+          │ CGV / CGA / CGU / ...  │
+          ▼                        ▼
+        ┌──────────────────────────────┐
+        │   Extraction LLM             │
+        │   (OpenAI / Anthropic)       │
+        │                              │
+        │   Prompt juriste + document  │
+        │   → clauses importantes      │
+        └──────────────┬───────────────┘
+                       │ HTML structuré
+                       ▼
+              Restitution à l'utilisateur
 ```
 
 ---
