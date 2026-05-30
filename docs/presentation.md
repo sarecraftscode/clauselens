@@ -204,15 +204,26 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 
 ---
 
-## Roadmap — 9 mois
+## Roadmap
 
-| Phase | Mois | Objectif |
-|---|---|---|
-| **MVP** | M1–M2 | Stack opérationnelle, 7 types de documents, interface web |
-| **Qualité** | M3–M4 | Amélioration des prompts avec les juristes, tests utilisateurs, feedback loop |
-| **Enrichissement** | M5–M6 | Traitement batch (multi-documents), API publique, nouveaux types |
-| **Conformité** | M7–M8 | Guardrails RGPD (Presidio), audit EU AI Act, documentation légale |
-| **Scale** | M9 | Déploiement cloud EU, monitoring avancé, intégrations partenaires |
+### Court terme — ~1 mois
+
+| | |
+|---|---|
+| ✅ | MVP fonctionnel (7 types de documents, interface web, stack complète) |
+| 🧪 | Tests internes et validation de la qualité d'extraction |
+| 🏗️ | Mise à jour de l'architecture selon les retours techniques |
+| 👥 | Déploiement à un échantillon réduit d'utilisateurs |
+
+### Moyen terme — ~3 mois
+
+| | |
+|---|---|
+| 🔧 | Amélioration des prompts suite aux premières utilisations réelles |
+| 💰 | Optimisation des coûts (modèles, cache, routing LiteLLM) |
+| 🎨 | Hiérarchisation et priorisation des clauses pour une meilleure UX |
+| ⚖️ | IHM dédiée aux juristes pour identifier et valider les clauses importantes |
+| 📚 | RAG sur documents de référence (Code civil, Code des assurances) |
 
 ---
 
