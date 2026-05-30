@@ -347,6 +347,7 @@ il assiste sans décider, l'utilisateur reste maître de sa signature.
 | 🔧 | Amélioration des prompts suite aux premières utilisations réelles |
 | 💰 | Optimisation des coûts (modèles, cache, routing LiteLLM) |
 | 🎨 | Hiérarchisation et priorisation des clauses pour une meilleure UX |
+| 📖 | Amélioration de l'UX sur le résultat pour faciliter la lecture |
 | ⚖️ | IHM dédiée aux juristes pour identifier et valider les clauses importantes |
 | 📚 | RAG sur documents de référence (Code civil, Code des assurances) |
 
