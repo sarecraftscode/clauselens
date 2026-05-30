@@ -60,9 +60,6 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 
 ✅ **Améliore la compréhension** grâce à une reformulation accessible
 
-### Types de documents supportés
-`CGV` · `CGA` · `CG Abonnement` · `CG Assurance` · `CGU` · `CG Garantie` · `CG Location`
-
 ---
 
 ## Parties prenantes
@@ -210,7 +207,8 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 
 | | |
 |---|---|
-| ✅ | MVP fonctionnel (7 types de documents, interface web, stack complète) |
+| ✅ | MVP fonctionnel — interface web, stack complète |
+| 📄 | 7 types de documents supportés : `CGV` · `CGA` · `CG Abonnement` · `CG Assurance` · `CGU` · `CG Garantie` · `CG Location` |
 | 🧪 | Tests internes et validation de la qualité d'extraction |
 | 🏗️ | Mise à jour de l'architecture selon les retours techniques |
 | 👥 | Déploiement à un échantillon réduit d'utilisateurs |
