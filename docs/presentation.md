@@ -246,8 +246,7 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 ✅ Le contenu du document **n'est pas stocké** après analyse
 ✅ L'utilisateur est **informé** de ce qui est envoyé au LLM
 
-⚠️ Certains documents peuvent contenir des données personnelles
-*(nom d'un représentant légal, email nominatif)* — traitement à surveiller
+⚠️ Certains documents peuvent contenir des données personnelles — traitement à surveiller
 
 ---
 
