@@ -199,7 +199,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 ## Coût d'une analyse — Exemple concret
 
 **Document : Conditions Générales de Location — 35 pages**
-Modèle : Mistral Small Latest (03/2025) — €0,1275 / M tokens entrée · €0,51 / M tokens sortie
+Modèle : mistral-small-2603 — 0,1275€ / M tokens entrée · 0,51€ / M tokens sortie
 Durée d'exécution : **9,1 secondes**
 
 | Étape | Tokens entrée | Tokens sortie | Coût |
