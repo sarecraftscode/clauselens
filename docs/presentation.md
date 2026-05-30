@@ -180,7 +180,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Vision juriste
 
-![Vision juriste w:1000](diagrams/vision-juriste.png)
+![Vision juriste w:550](diagrams/vision-juriste.png)
 
 ---
 
