@@ -341,17 +341,3 @@ tout en gardant l'humain au centre de la décision.
 
 > *"Un document illisible ne devrait pas rester illisible."*
 
----
-
-## Annexe — Prompts d'extraction disponibles
-
-| Prompt | Type de document | Clauses extraites |
-|---|---|---|
-| `CGAssurance` | Conditions d'assurance | Événements couverts, exclusions, franchises, plafonds |
-| `CGVente` | Conditions de vente | Prix, livraison, rétractation, garanties légales |
-| `CGAbonnement` | Abonnements | Durée, renouvellement, résiliation, évolution tarifs |
-| `CGAchat` | Conditions d'achat | Facturation, paiement, livraison, garanties fournisseur |
-| `CGGarantie` | Garanties | Couverture, exclusions, franchise, plafonds |
-| `CGLocation` | Location | Durée, dépôt de garantie, état des lieux, responsabilités |
-| `CGUtilisation` | CGU | Données personnelles, interdictions, responsabilité plateforme |
-| `DocumentDetection` | *(tous types)* | Prompt de classification du type de document |
