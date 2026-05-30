@@ -128,7 +128,7 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 
 ✅ **Extrait et met en lumière** les points d'attention avant de signer
 
-✅ **Réduit le temps de lecture** — de plusieurs heures à quelques secondes
+✅ **Réduit le temps de lecture** — de plusieurs heures à quelques minutes
 
 ✅ **Améliore la compréhension** grâce à une reformulation accessible
 
