@@ -105,39 +105,41 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
   JURISTE
   │
   │  Rôle : affiner les prompts dans Langfuse
-  │  • définir les clauses importantes par type de document
-  │  • tester et valider la qualité des extractions
+  │  • prompt de détection du type de document
+  │  • prompts d'extraction par type de CG
+  │  • tester et valider la qualité des résultats
   │  • versionner les prompts (production / draft)
   │
-  └──────────────────▶ ┌──────────────────────┐
-                        │       Langfuse        │
-                        │  Bibliothèque de      │
-                        │  prompts versionnés   │
-                        │  par type de CG       │
-                        └──────────┬───────────┘
-                                   │ Prompt sélectionné
-                                   │ selon le type détecté
-Document entrant                   │
-(texte ou PDF)                     │
-      │                            │
-      ▼                            │
-┌─────────────────────┐            │
-│ Détection du type   │            │
-│ de document         │            │
-│ (Mistral)           │            │
-└─────────┬───────────┘            │
-          │ CGV / CGA / CGU / ...  │
-          ▼                        ▼
-        ┌──────────────────────────────┐
-        │   Extraction LLM             │
-        │   (OpenAI / Anthropic)       │
-        │                              │
-        │   Prompt juriste + document  │
-        │   → clauses importantes      │
-        └──────────────┬───────────────┘
-                       │ HTML structuré
-                       ▼
-              Restitution à l'utilisateur
+  └──────────────────▶ ┌──────────────────────────────────┐
+                        │             Langfuse              │
+                        │                                   │
+                        │  [1] Prompt de détection du type  │
+                        │  [2] Prompts d'extraction par CG  │
+                        │      (CGV, CGA, CGU…)             │
+                        └────────┬─────────────┬───────────┘
+                                 │             │
+                        [1] Prompt        [2] Prompt
+                        détection         extraction
+                                 │             │
+Document entrant                 ▼             │
+(texte ou PDF) ─────▶ ┌──────────────────┐    │
+                       │ Détection du     │    │
+                       │ type de document │    │
+                       │ (Mistral)        │    │
+                       └────────┬─────────┘    │
+                                │ CGV / CGA /  │
+                                │ CGU / ...    │
+                                ▼              ▼
+                       ┌────────────────────────────┐
+                       │       Extraction LLM        │
+                       │   (OpenAI / Anthropic)      │
+                       │                             │
+                       │  Prompt juriste + document  │
+                       │  → clauses importantes      │
+                       └─────────────┬──────────────┘
+                                     │ HTML structuré
+                                     ▼
+                            Restitution à l'utilisateur
 ```
 
 ---
