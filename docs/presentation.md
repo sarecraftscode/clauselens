@@ -275,6 +275,7 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 | Limite | Description |
 |---|---|
 | ⏳ **Temps d'attente** | Long sur les documents volumineux |
+| 📏 **Fenêtre contextuelle** | Un document très long (100+ pages) peut dépasser la limite du modèle et être tronqué silencieusement — sans avertissement |
 | 🧠 **Limite du modèle** | Quota de tokens par minute (GPT-4o mini) |
 | 💸 **Coût par analyse** | Pas de mutualisation sur le MVP |
 | 👥 **Scalabilité limitée** | Architecture mono-utilisateur, sans gestion de charge |
