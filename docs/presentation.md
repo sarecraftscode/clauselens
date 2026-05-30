@@ -235,7 +235,7 @@ RGPD & EU AI Act
 >
 > **Obligation** : l'utilisateur est informé qu'il interagit avec une IA avant toute analyse.
 >
-> 🛡️ **Surveillance de la conformité** via guardrails — le proxy LLM fournit des politiques de base (modération du contenu, détection de PII, audit des appels)
+> 🛡️ **Surveillance de la conformité** via guardrails — modération du contenu, détection de PII, audit des appels *(ex : LiteLLM permet de configurer ces politiques nativement)*
 
 ---
 
@@ -250,7 +250,7 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 
 ⚠️ Certains documents peuvent contenir des données personnelles — traitement à surveiller
 
-🛡️ **Surveillance de la conformité** via guardrails — le proxy LLM fournit des politiques de base (modération du contenu, détection de PII, audit des appels)
+🛡️ **Surveillance de la conformité** via guardrails — modération du contenu, détection de PII, audit des appels *(ex : LiteLLM permet de configurer ces politiques nativement)*
 
 ---
 
