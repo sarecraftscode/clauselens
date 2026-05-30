@@ -1,27 +1,27 @@
-flowchart TD
-  UI["🌐 Interface Web"]
+flowchart LR
+  UI["🌐\nInterface\nWeb"]
 
-  subgraph N8N ["n8n — Orchestration"]
-    WH["Webhook"] --> SW{"texte\nou PDF ?"}
-    SW -->|PDF| EX["Extract from File"]
-    SW -->|Texte| DT
-    EX --> DT["Détection du type\nMistral"]
-    DT -->|"type détecté"| GP["Get Prompt\nLangfuse"]
-    GP -->|"prompt expert"| EXT["Extraction LLM\nOpenAI · Anthropic"]
+  subgraph ORCH["⚙️ Orchestration"]
+    direction TB
+    DT["🔍 Détection\ndu type"]
+    GP["📋 Récupération\ndu prompt"]
+    EX["🤖 Extraction\ndes clauses"]
+    DT --> GP --> EX
   end
 
-  subgraph INFRA ["Infrastructure"]
-    LITE["LiteLLM\nProxy LLM"]
-    LF2["Langfuse\nTraces · Prompts"]
-    DB["PostgreSQL · Redis"]
+  subgraph INFRA["🏗️ Plateforme IA"]
+    direction TB
+    PR["📚 Prompt Registry\n& Observabilité"]
+    PROXY["⚡ LLM Proxy"]
+    LLM["🧠 Modèles IA"]
+    PROXY --> LLM
   end
 
-  LITE --> OAI["OpenAI"]
-  LITE --> ANT["Anthropic"]
-  LITE --> MIS["Mistral"]
+  DB["🗄️ Stockage"]
 
-  UI -->|"POST document"| WH
-  EXT -->|"HTML résumé"| UI
-  N8N <-->|"appels LLM"| LITE
-  N8N <-->|"prompts & traces"| LF2
-  N8N --- DB
+  UI -->|"document"| DT
+  EX -->|"résumé"| UI
+  GP <-->|"prompts"| PR
+  EX <-->|"appels LLM"| PROXY
+  ORCH -.- DB
+  INFRA -.- DB
