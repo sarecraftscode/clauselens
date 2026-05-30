@@ -157,8 +157,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 | Rôle | Responsabilité |
 |---|---|
-| **Sponsor / Porteur de projet** | Décisions stratégiques, validation des orientations, déblocage des ressources |
-| **Product Manager** | Priorisation, roadmap, coordination |
+| **Product Manager** | Priorisation, roadmap, coordination, portage du projet |
 | **Juristes** | Définir les clauses importantes par type, rédiger et affiner les prompts |
 | **Développeur** | Architecture LLM, guardrails, interface utilisateur, déploiement |
 | **UX Designer** | Expérience de lecture, présentation des résultats |
