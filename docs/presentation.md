@@ -323,8 +323,9 @@ Phase 1 — MVP          Phase 2 — Stabilisation     Phase 3 — Enrichissemen
 🏗️ Architecture        🔒 Sécurisation de l'IHM     📚 RAG (Code civil…)        🌍 Multilingue
    à jour              🔧 Amélioration des prompts   🤖 Modèle dédié si besoin   📱 Mobile + OCR
                        🎨 Amélioration UX résultat   📖 Meilleure hiérarchisation 🔌 Serveur MCP
-                       🐛 Correction des limites MVP  📑 Nouveaux types de docs
-                          détectées
+                       🔗 Traçabilité dans le résultat 📑 Nouveaux types de docs
+                       🎯 Amélioration détection type
+                       📏 Gestion documents longs
 ```
 
 ---
