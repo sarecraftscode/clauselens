@@ -1,3 +1,4 @@
 .env
 docs/presentation.pdf
 docs/presentation.html
+docs/diagrams/*.png

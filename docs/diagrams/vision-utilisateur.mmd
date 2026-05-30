@@ -1,0 +1,11 @@
+sequenceDiagram
+  actor U as Utilisateur
+  participant W as Interface Web
+  participant C as ClauseLens
+
+  U->>W: Dépose son document (texte ou PDF)
+  U->>W: Clique sur Analyser
+  W->>C: Envoi du document
+  Note over C: Détecte le type de document<br/>Applique le prompt expert<br/>Extrait les clauses importantes
+  C-->>W: Résumé HTML structuré
+  W-->>U: Affiche les clauses clés

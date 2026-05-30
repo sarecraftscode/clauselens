@@ -1,0 +1,15 @@
+flowchart TD
+  J["⚖️ Juriste\nRédige · Valide · Versionne"]
+
+  subgraph LF ["Langfuse — Bibliothèque de prompts"]
+    P1["📌 Prompt détection\ndu type de document"]
+    P2["📋 Prompts d'extraction\npar type de CG"]
+  end
+
+  DOC["📄 Document\ntexte ou PDF"] --> D
+  J -->|"affine les prompts"| P1
+  J -->|"affine les prompts"| P2
+  P1 -->|"guide la classification"| D["🔍 Détection du type\nMistral"]
+  D -->|"type : CGV / CGA / CGU…"| E
+  P2 -->|"prompt expert"| E["🤖 Extraction LLM\nOpenAI · Anthropic"]
+  E --> R["✅ Résumé structuré\npour l'utilisateur"]

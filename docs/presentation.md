@@ -97,9 +97,9 @@ Le problème que personne ne voit venir
 
 <br>
 
-**7 Français sur 10** ne lisent pas ou rarement les conditions générales *(OpinionWay)*
+**7 Français sur 10** ne lisent pas ou rarement les conditions générales — *[OpinionWay](https://www.isoc.fr/cgu-opinionway/)*
 
-**Jusqu'à 6h52** pour lire certaines CGV en entier *(Que Choisir)*
+**Jusqu'à 6h52** pour lire certaines CGV en entier — *[Que Choisir](https://www.quechoisir.org/actualite-conditions-generales-a-l-epreuve-du-chrono-n98457/)*
 
 <br>
 
@@ -186,75 +186,19 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Vision utilisateur
 
-```mermaid
-sequenceDiagram
-  actor U as Utilisateur
-  participant W as Interface Web
-  participant C as ClauseLens
-
-  U->>W: Dépose son document (texte ou PDF)
-  U->>W: Clique sur Analyser
-  W->>C: Envoi du document
-  Note over C: Détecte le type de document<br/>Applique le prompt expert<br/>Extrait les clauses importantes
-  C-->>W: Résumé HTML structuré
-  W-->>U: Affiche les clauses clés
-```
+![Vision utilisateur w:850](diagrams/vision-utilisateur.png)
 
 ---
 
 ## Vision juriste — Le rôle des prompts
 
-```mermaid
-flowchart TD
-  J["⚖️ Juriste\nRédige · Valide · Versionne"]
-
-  subgraph LF ["Langfuse — Bibliothèque de prompts"]
-    P1["📌 Prompt détection\ndu type de document"]
-    P2["📋 Prompts d'extraction\npar type de CG"]
-  end
-
-  DOC["📄 Document\ntexte ou PDF"] --> D
-  J -->|"affine les prompts"| P1
-  J -->|"affine les prompts"| P2
-  P1 -->|"guide la classification"| D["🔍 Détection du type\nMistral"]
-  D -->|"type : CGV / CGA / CGU…"| E
-  P2 -->|"prompt expert"| E["🤖 Extraction LLM\nOpenAI · Anthropic"]
-  E --> R["✅ Résumé structuré\npour l'utilisateur"]
-```
+![Vision juriste w:850](diagrams/vision-juriste.png)
 
 ---
 
 ## Architecture MVP
 
-```mermaid
-flowchart TD
-  UI["🌐 Interface Web"]
-
-  subgraph N8N ["n8n — Orchestration"]
-    WH["Webhook"] --> SW{"texte\nou PDF ?"}
-    SW -->|PDF| EX["Extract from File"]
-    SW -->|Texte| DT
-    EX --> DT["Détection du type\nMistral"]
-    DT -->|"type détecté"| GP["Get Prompt\nLangfuse"]
-    GP -->|"prompt expert"| EXT["Extraction LLM\nOpenAI · Anthropic"]
-  end
-
-  subgraph INFRA ["Infrastructure"]
-    LITE["LiteLLM\nProxy LLM"]
-    LF2["Langfuse\nTraces · Prompts"]
-    DB["PostgreSQL · Redis"]
-  end
-
-  LITE --> OAI["OpenAI"]
-  LITE --> ANT["Anthropic"]
-  LITE --> MIS["Mistral"]
-
-  UI -->|"POST document"| WH
-  EXT -->|"HTML résumé"| UI
-  N8N <-->|"appels LLM"| LITE
-  N8N <-->|"prompts & traces"| LF2
-  N8N --- DB
-```
+![Architecture MVP w:850](diagrams/architecture-mvp.png)
 
 ---
 

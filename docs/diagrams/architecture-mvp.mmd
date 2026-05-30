@@ -1,0 +1,27 @@
+flowchart TD
+  UI["🌐 Interface Web"]
+
+  subgraph N8N ["n8n — Orchestration"]
+    WH["Webhook"] --> SW{"texte\nou PDF ?"}
+    SW -->|PDF| EX["Extract from File"]
+    SW -->|Texte| DT
+    EX --> DT["Détection du type\nMistral"]
+    DT -->|"type détecté"| GP["Get Prompt\nLangfuse"]
+    GP -->|"prompt expert"| EXT["Extraction LLM\nOpenAI · Anthropic"]
+  end
+
+  subgraph INFRA ["Infrastructure"]
+    LITE["LiteLLM\nProxy LLM"]
+    LF2["Langfuse\nTraces · Prompts"]
+    DB["PostgreSQL · Redis"]
+  end
+
+  LITE --> OAI["OpenAI"]
+  LITE --> ANT["Anthropic"]
+  LITE --> MIS["Mistral"]
+
+  UI -->|"POST document"| WH
+  EXT -->|"HTML résumé"| UI
+  N8N <-->|"appels LLM"| LITE
+  N8N <-->|"prompts & traces"| LF2
+  N8N --- DB
