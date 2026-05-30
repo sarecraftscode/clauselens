@@ -56,7 +56,18 @@ Dans n8n, les credentials sont accessibles depuis l'icône **Credentials** dans 
 
 > Tous les nœuds OpenAI de n8n passeront par LiteLLM et seront tracés dans Langfuse.
 
-## Étape 7 — Configurer la credential Langfuse dans n8n
+## Étape 7 — Installer le node Langfuse dans n8n
+
+Le node Langfuse n'est pas inclus par défaut dans n8n — il doit être installé via la communauté.
+
+1. Ouvrez le sous-workflow **ClauseLens Sub Workflow** dans n8n
+2. Cliquez sur un nœud **Langfuse** dans le canvas
+3. n8n propose d'installer le node manquant — cliquez **Install**
+4. Attendez la confirmation d'installation, puis rechargez la page
+
+> Sans cette étape, le type de credential **Langfuse** n'apparaît pas dans la liste lors de la création.
+
+## Étape 8 — Configurer la credential Langfuse dans n8n
 
 **Barre latérale gauche** → **Credentials** → **Add credential** → **Langfuse** :
 
@@ -66,7 +77,7 @@ Dans n8n, les credentials sont accessibles depuis l'icône **Credentials** dans 
 
 > Utilisez `langfuse` et non `localhost` — n8n communique avec Langfuse via le réseau Docker interne.
 
-## Étape 8 — Importer les prompts dans Langfuse
+## Étape 9 — Importer les prompts dans Langfuse
 
 ```bash
 # Tous les prompts
