@@ -255,6 +255,7 @@ nom d'un représentant légal, email nominatif d'un DPO → **personne physique 
 | Transfert hors UE | Privilégier des modèles **hébergés en UE** (ex : Mistral) |
 | Rétention des données | **Ne pas stocker** le contenu du document après analyse |
 | Transparence | Informer l'utilisateur de ce qui est envoyé au LLM |
+| Entraînement des modèles | LLM configuré pour **ne pas utiliser les appels API pour entraîner les modèles** |
 
 ---
 
