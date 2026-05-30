@@ -180,7 +180,41 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Vision juriste — Le rôle des prompts
 
-![Vision juriste w:850](diagrams/vision-juriste.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 16px;">
+
+<div style="background: #eff6ff; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 24px;">
+
+### ⚖️ Le juriste configure l'IA
+
+Il définit dans **Langfuse** les instructions qui guident chaque analyse :
+
+📌 **Prompt de détection**
+Quels indices permettent d'identifier le type de document
+
+📋 **Prompts d'extraction**
+Quelles clauses sont importantes, par type de CG
+
+✅ **Validation**
+Il teste et valide la qualité des résultats
+
+🔄 **Versioning**
+Il publie en production ou conserve en draft
+
+</div>
+
+<div style="display: flex; flex-direction: column; justify-content: center; gap: 8px; font-size: 0.9em;">
+
+<div style="background: #1d4ed8; color: white; padding: 10px 16px; border-radius: 8px; text-align: center;">📄 Document entrant</div>
+<div style="text-align: center; color: #64748b;">↓</div>
+<div style="background: #dbeafe; border: 1px solid #93c5fd; padding: 10px 16px; border-radius: 8px; text-align: center;">🔍 Détection du type <br><small>Mistral + <strong>prompt juriste</strong></small></div>
+<div style="text-align: center; color: #64748b;">↓</div>
+<div style="background: #dbeafe; border: 1px solid #93c5fd; padding: 10px 16px; border-radius: 8px; text-align: center;">🤖 Extraction des clauses <br><small>OpenAI / Anthropic + <strong>prompt juriste</strong></small></div>
+<div style="text-align: center; color: #64748b;">↓</div>
+<div style="background: #dcfce7; border: 1px solid #86efac; padding: 10px 16px; border-radius: 8px; text-align: center;">✅ Résumé pour l'utilisateur</div>
+
+</div>
+
+</div>
 
 ---
 
