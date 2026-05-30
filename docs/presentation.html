@@ -2153,41 +2153,36 @@ code { background: #eff6ff; color: var(--color-primary); padding: 2px 6px; borde
 ul li { margin-bottom: 6px; }
 .stat { font-size: 2.5em; font-weight: 700; color: var(--color-primary); }
 ;" data-marpit-pagination-total="28">
-<h2 id="rgpd-et-eu-ai-act--mesures-techniques">RGPD et EU AI Act — Mesures techniques</h2>
-<h3 id="mesures-disponibles-via-litellm">Mesures disponibles via LiteLLM</h3>
+<h2 id="rgpd--analyse-du-contexte-clauselens">RGPD — Analyse du contexte ClauseLens</h2>
+<p>Les CGV/CGU sont des <strong>documents publics</strong> — risque RGPD globalement faible.</p>
+<p><strong>Pas de données personnelles :</strong><br />
+téléphone entreprise, <code>contact@société.fr</code>, adresse du siège → données de <strong>personne morale</strong>, hors champ RGPD</p>
+<p><strong>Données personnelles possibles :</strong><br />
+nom d'un représentant légal, email nominatif d'un DPO → <strong>personne physique identifiable</strong></p>
+<p><strong>Ce qu'il faut traiter :</strong></p>
 <table>
 <thead>
 <tr>
-<th>Mesure</th>
-<th>Outil</th>
-<th>Statut</th>
+<th>Obligation</th>
+<th>Action</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Pseudonymisation PII avant envoi au LLM</td>
-<td>Presidio (guardrail)</td>
-<td>Configurable</td>
+<td>Envoi à un LLM tiers</td>
+<td>Exiger un <strong>DPA</strong> avec le fournisseur de modèle</td>
 </tr>
 <tr>
-<td>Modération du contenu</td>
-<td>LlamaGuard (guardrail)</td>
-<td>Configurable</td>
+<td>Transfert hors UE</td>
+<td>Privilégier des modèles <strong>hébergés en UE</strong> (ex : Mistral)</td>
 </tr>
 <tr>
-<td>Traçabilité de chaque appel LLM</td>
-<td>Langfuse</td>
-<td><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> Actif</td>
+<td>Rétention des données</td>
+<td><strong>Ne pas stocker</strong> le contenu du document après analyse</td>
 </tr>
 <tr>
-<td>Non-log des messages bruts</td>
-<td><code>redact_messages_in_logging_by_default</code></td>
-<td>Configurable</td>
-</tr>
-<tr>
-<td>Résidence des données (UE)</td>
-<td>Modèles locaux / Mistral EU</td>
-<td>Configurable</td>
+<td>Transparence</td>
+<td>Informer l'utilisateur de ce qui est envoyé au LLM</td>
 </tr>
 </tbody>
 </table>

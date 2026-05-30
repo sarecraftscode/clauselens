@@ -237,17 +237,24 @@ RGPD & EU AI Act
 
 ---
 
-## RGPD et EU AI Act — Mesures techniques
+## RGPD — Analyse du contexte ClauseLens
 
-### Mesures disponibles via LiteLLM
+Les CGV/CGU sont des **documents publics** — risque RGPD globalement faible.
 
-| Mesure | Outil | Statut |
-|---|---|---|
-| Pseudonymisation PII avant envoi au LLM | Presidio (guardrail) | Configurable |
-| Modération du contenu | LlamaGuard (guardrail) | Configurable |
-| Traçabilité de chaque appel LLM | Langfuse | ✅ Actif |
-| Non-log des messages bruts | `redact_messages_in_logging_by_default` | Configurable |
-| Résidence des données (UE) | Modèles locaux / Mistral EU | Configurable |
+**Pas de données personnelles :**
+téléphone entreprise, `contact@société.fr`, adresse du siège → données de **personne morale**, hors champ RGPD
+
+**Données personnelles possibles :**
+nom d'un représentant légal, email nominatif d'un DPO → **personne physique identifiable**
+
+**Ce qu'il faut traiter :**
+
+| Obligation | Action |
+|---|---|
+| Envoi à un LLM tiers | Exiger un **DPA** avec le fournisseur de modèle |
+| Transfert hors UE | Privilégier des modèles **hébergés en UE** (ex : Mistral) |
+| Rétention des données | **Ne pas stocker** le contenu du document après analyse |
+| Transparence | Informer l'utilisateur de ce qui est envoyé au LLM |
 
 ---
 
