@@ -186,85 +186,74 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ## Vision utilisateur
 
-```
-┌─────────────────────────────────────────────────────┐
-│                    UTILISATEUR                       │
-│                                                      │
-│  1. Colle ou dépose son document (texte ou PDF)      │
-│  2. Clique sur Analyser                              │
-│  3. Reçoit un résumé structuré des clauses clés      │
-└─────────────────────────────────────────────────────┘
-         │                          ▲
-         │ Document                 │ Résumé structuré
-         ▼                          │
-┌─────────────────────────────────────────────────────┐
-│                   CLAUSELENS                         │
-│                                                      │
-│  • Détecte automatiquement le type de document       │
-│  • Applique le prompt expert correspondant           │
-│  • Extrait uniquement les clauses importantes        │
-└─────────────────────────────────────────────────────┘
+```mermaid
+sequenceDiagram
+  actor U as Utilisateur
+  participant W as Interface Web
+  participant C as ClauseLens
+
+  U->>W: Dépose son document (texte ou PDF)
+  U->>W: Clique sur Analyser
+  W->>C: Envoi du document
+  Note over C: Détecte le type de document<br/>Applique le prompt expert<br/>Extrait les clauses importantes
+  C-->>W: Résumé HTML structuré
+  W-->>U: Affiche les clauses clés
 ```
 
 ---
 
 ## Vision juriste — Le rôle des prompts
 
-```
-  JURISTE
-  │  • Rédige et affine les prompts dans Langfuse
-  │  • Prompt de détection du type de document
-  │  • Prompts d'extraction par type de CG
-  │  • Teste, valide et versionne (production / draft)
-  │
-  └──────────────────▶ ┌──────────────────────────────────┐
-                        │             Langfuse              │
-                        │  [1] Prompt de détection du type  │
-                        │  [2] Prompts d'extraction par CG  │
-                        └────────┬─────────────┬───────────┘
-                                 │             │
-                        [1] Prompt        [2] Prompt
-                        détection         extraction
-                                 │             │
-Document entrant                 ▼             │
-(texte ou PDF) ─────▶ ┌──────────────────┐    │
-                       │ Détection type   │    │
-                       │ (Mistral)        │    │
-                       └────────┬─────────┘    │
-                                │              ▼
-                                └──▶ ┌──────────────────┐
-                                     │  Extraction LLM  │
-                                     │  (OpenAI/Anthr.) │
-                                     └────────┬─────────┘
-                                              │ HTML structuré
-                                              ▼
-                                     Utilisateur
+```mermaid
+flowchart TD
+  J["⚖️ Juriste\nRédige · Valide · Versionne"]
+
+  subgraph LF ["Langfuse — Bibliothèque de prompts"]
+    P1["📌 Prompt détection\ndu type de document"]
+    P2["📋 Prompts d'extraction\npar type de CG"]
+  end
+
+  DOC["📄 Document\ntexte ou PDF"] --> D
+  J -->|"affine les prompts"| P1
+  J -->|"affine les prompts"| P2
+  P1 -->|"guide la classification"| D["🔍 Détection du type\nMistral"]
+  D -->|"type : CGV / CGA / CGU…"| E
+  P2 -->|"prompt expert"| E["🤖 Extraction LLM\nOpenAI · Anthropic"]
+  E --> R["✅ Résumé structuré\npour l'utilisateur"]
 ```
 
 ---
 
 ## Architecture MVP
 
-```
-┌──────────────┐  POST   ┌─────────────────────────────────────┐
-│ Interface    │ ──────▶ │  n8n — Orchestration                 │
-│ Web          │         │  ├── Webhook (entrée)                │
-│              │ ◀──────  │  ├── Switch (texte / fichier PDF)   │
-└──────────────┘ Résultat │  ├── Détection type (Mistral)       │
-                          │  ├── Get prompt (Langfuse)           │
-                          │  └── Extraction (OpenAI / Anthropic) │
-                          └──────────────┬──────────────────────┘
-                                         │
-                    ┌────────────────────┼──────────────────┐
-                    ▼                    ▼                  ▼
-             ┌────────────┐    ┌──────────────┐   ┌──────────────┐
-             │  LiteLLM   │    │   Langfuse   │   │  PostgreSQL  │
-             │  Proxy LLM │    │  Traces +    │   │  + Redis     │
-             └─────┬──────┘    │  Prompts     │   └──────────────┘
-                   │           └──────────────┘
-       ┌───────────┼───────────┐
-       ▼           ▼           ▼
-   OpenAI     Anthropic     Mistral
+```mermaid
+flowchart TD
+  UI["🌐 Interface Web"]
+
+  subgraph N8N ["n8n — Orchestration"]
+    WH["Webhook"] --> SW{"texte\nou PDF ?"}
+    SW -->|PDF| EX["Extract from File"]
+    SW -->|Texte| DT
+    EX --> DT["Détection du type\nMistral"]
+    DT -->|"type détecté"| GP["Get Prompt\nLangfuse"]
+    GP -->|"prompt expert"| EXT["Extraction LLM\nOpenAI · Anthropic"]
+  end
+
+  subgraph INFRA ["Infrastructure"]
+    LITE["LiteLLM\nProxy LLM"]
+    LF2["Langfuse\nTraces · Prompts"]
+    DB["PostgreSQL · Redis"]
+  end
+
+  LITE --> OAI["OpenAI"]
+  LITE --> ANT["Anthropic"]
+  LITE --> MIS["Mistral"]
+
+  UI -->|"POST document"| WH
+  EXT -->|"HTML résumé"| UI
+  N8N <-->|"appels LLM"| LITE
+  N8N <-->|"prompts & traces"| LF2
+  N8N --- DB
 ```
 
 ---
