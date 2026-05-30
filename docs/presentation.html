@@ -1332,29 +1332,7 @@ ul li { margin-bottom: 6px; }
 .stat { font-size: 2.5em; font-weight: 700; color: var(--color-primary); }
 ;" data-marpit-pagination-total="29">
 <h2 id="vision-juriste--le-r%C3%B4le-des-prompts">Vision juriste — Le rôle des prompts</h2>
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 16px;">
-<div style="background: #eff6ff; border-left: 4px solid #1d4ed8; border-radius: 0 8px 8px 0; padding: 24px;">
-<h3 id="%E2%9A%96%EF%B8%8F-le-juriste-configure-lia"><img class="emoji" draggable="false" alt="⚖️" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2696.svg" data-marp-twemoji=""/> Le juriste configure l'IA</h3>
-<p>Il définit dans <strong>Langfuse</strong> les instructions qui guident chaque analyse :</p>
-<p><img class="emoji" draggable="false" alt="📌" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/1f4cc.svg" data-marp-twemoji=""/> <strong>Prompt de détection</strong><br />
-Quels indices permettent d'identifier le type de document</p>
-<p><img class="emoji" draggable="false" alt="📋" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/1f4cb.svg" data-marp-twemoji=""/> <strong>Prompts d'extraction</strong><br />
-Quelles clauses sont importantes, par type de CG</p>
-<p><img class="emoji" draggable="false" alt="✅" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/2705.svg" data-marp-twemoji=""/> <strong>Validation</strong><br />
-Il teste et valide la qualité des résultats</p>
-<p><img class="emoji" draggable="false" alt="🔄" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@17.0.2/assets/svg/1f504.svg" data-marp-twemoji=""/> <strong>Versioning</strong><br />
-Il publie en production ou conserve en draft</p>
-</div>
-<div style="display: flex; flex-direction: column; justify-content: center; gap: 8px; font-size: 0.9em;">
-<div style="background: #1d4ed8; color: white; padding: 10px 16px; border-radius: 8px; text-align: center;">📄 Document entrant</div>
-<div style="text-align: center; color: #64748b;">↓</div>
-<div style="background: #dbeafe; border: 1px solid #93c5fd; padding: 10px 16px; border-radius: 8px; text-align: center;">🔍 Détection du type <br /><small>Mistral + <strong>prompt juriste</strong></small></div>
-<div style="text-align: center; color: #64748b;">↓</div>
-<div style="background: #dbeafe; border: 1px solid #93c5fd; padding: 10px 16px; border-radius: 8px; text-align: center;">🤖 Extraction des clauses <br /><small>OpenAI / Anthropic + <strong>prompt juriste</strong></small></div>
-<div style="text-align: center; color: #64748b;">↓</div>
-<div style="background: #dcfce7; border: 1px solid #86efac; padding: 10px 16px; border-radius: 8px; text-align: center;">✅ Résumé pour l'utilisateur</div>
-</div>
-</div>
+<p><img src="diagrams/vision-juriste.png" alt="Vision juriste" style="width:1000px;" /></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-theme="default" data-style=":root {
   --color-dark: #0f172a;
