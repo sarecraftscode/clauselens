@@ -160,8 +160,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 | **Sponsor / Porteur de projet** | Décisions stratégiques, validation des orientations, déblocage des ressources |
 | **Product Manager** | Priorisation, roadmap, coordination |
 | **Juristes** | Définir les clauses importantes par type, rédiger et affiner les prompts |
-| **Développeur IA / MLOps** | Architecture LLM, guardrails, déploiement, monitoring |
-| **Développeur frontend** | Interface utilisateur |
+| **Développeur** | Architecture LLM, guardrails, interface utilisateur, déploiement |
 | **UX Designer** | Expérience de lecture, présentation des résultats |
 | **DPO (Délégué à la Protection des Données)** | Conformité traitement des données, analyse d'impact (DPIA — Data Protection Impact Assessment) |
 | **Utilisateurs finaux** | Tests, retours, validation de l'utilité |
