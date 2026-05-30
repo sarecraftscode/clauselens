@@ -4,7 +4,7 @@ flowchart LR
   subgraph ORCH["⚙️ Orchestration"]
     direction TB
     DT["🔍 Détection\ndu type"]
-    GP["📋 Récupération\ndu prompt"]
+    GP["📋 Récupération\ndu prompt\nd'extraction"]
     EX["🤖 Extraction\ndes clauses"]
     DT --> GP --> EX
   end
@@ -17,11 +17,9 @@ flowchart LR
     PROXY --> LLM
   end
 
-  DB["🗄️ Stockage"]
-
   UI -->|"document"| DT
   EX -->|"résumé"| UI
-  GP <-->|"prompts"| PR
+  PR <-->|"prompt détection"| DT
+  PR <-->|"prompt extraction"| GP
   EX <-->|"appels LLM"| PROXY
-  ORCH -.- DB
-  INFRA -.- DB
+  DT <-->|"appels LLM"| PROXY
