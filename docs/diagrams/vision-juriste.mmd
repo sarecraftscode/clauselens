@@ -1,7 +1,7 @@
 flowchart LR
-  J["⚖️ JURISTE\n―――――――――――――\nDéfinit · Valide · Versionne\nles prompts dans Langfuse"]
+  J["⚖️ JURISTE\n―――――――――――――\nDéfinit · Valide · Versionne\nles prompts"]
 
-  subgraph LF["🗄️ Langfuse — Bibliothèque de prompts"]
+  subgraph LF["🗄️ Bibliothèque de prompts"]
     PD["📌 Prompt\ndétection du type"]
     PE["📋 Prompts\nd'extraction par CG"]
   end
@@ -11,7 +11,7 @@ flowchart LR
 
   DOC["📄 Document\n(texte ou PDF)"] --> DT
 
-  PD -. "guide la classification" .-> DT["🔍 Détection\ndu type\n(Mistral)"]
-  DT -- "type détecté\nCGV / CGA / CGU…" --> EX["🤖 Extraction\ndes clauses\n(OpenAI · Anthropic)"]
+  PD -. "guide la classification" .-> DT["🔍 Détection\ndu type"]
+  DT -- "type détecté\nCGV / CGA / CGU…" --> EX["🤖 Extraction\ndes clauses"]
   PE -. "prompt expert" .-> EX
   EX --> RES["✅ Résumé structuré\npour l'utilisateur"]
