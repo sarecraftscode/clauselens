@@ -320,12 +320,15 @@ Phase 1 — MVP          Phase 2 — Stabilisation     Phase 3 — Enrichissemen
 ~1 mois                ~3 mois                      ~6 mois                     ~9 mois
 ──────────────────     ─────────────────────────    ─────────────────────────   ──────────────────────
 ✅ MVP fonctionnel     🧪 Tests sur 10 utilisateurs  ⚖️ IHM juriste              🔊 Résumé audio
-🏗️ Architecture        🔒 Sécurisation de l'IHM     📚 RAG (Code civil…)        🌍 Multilingue
-   à jour              🔧 Amélioration des prompts   🤖 Modèle dédié si besoin   📱 Mobile + OCR
-                       🎨 Amélioration UX résultat   📖 Meilleure hiérarchisation 🔌 Serveur MCP
-                       🔗 Traçabilité dans le résultat 📑 Nouveaux types de docs
+🏗️ Architecture        🔒 Sécurisation de l'IHM     📑 Nouveaux types de docs   🌍 Multilingue
+   à jour              🔧 Amélioration des prompts                               📱 Mobile + OCR
+                       🎨 Amélioration UX résultat                               🔌 Serveur MCP
+                       🔗 Traçabilité dans le résultat
                        🎯 Amélioration détection type
                        📏 Gestion documents longs
+
+──────────────────────────────────────────────────────────────────────────────────────────────
+💡 À envisager si succès : modèle dédié · fine-tuning sur corpus de conditions générales
 ```
 
 ---
