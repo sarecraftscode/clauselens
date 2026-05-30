@@ -2,16 +2,82 @@
 marp: true
 theme: default
 paginate: true
+style: |
+  :root {
+    --color-dark: #0f172a;
+    --color-primary: #1d4ed8;
+    --color-accent: #3b82f6;
+    --color-light: #f8fafc;
+    --color-muted: #64748b;
+  }
+  section {
+    background: #ffffff;
+    color: var(--color-dark);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    padding: 48px 64px;
+  }
+  section.title {
+    background: var(--color-dark);
+    color: #ffffff;
+    justify-content: center;
+    text-align: center;
+  }
+  section.title h1 { color: #ffffff; font-size: 2.6em; margin-bottom: 12px; }
+  section.title h3 { color: #93c5fd; font-weight: 400; font-size: 1.1em; }
+  section.divider {
+    background: var(--color-primary);
+    color: #ffffff;
+    justify-content: center;
+    text-align: center;
+  }
+  section.divider h2 { color: #ffffff; font-size: 2em; border: none; }
+  section.divider p { color: #bfdbfe; font-size: 1em; }
+  h1 { color: var(--color-dark); font-size: 1.8em; }
+  h2 {
+    color: var(--color-primary);
+    font-size: 1.4em;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+  }
+  h3 { color: var(--color-dark); font-size: 1.1em; margin-top: 20px; }
+  blockquote {
+    border-left: 4px solid var(--color-accent);
+    background: #eff6ff;
+    padding: 16px 20px;
+    border-radius: 0 8px 8px 0;
+    color: var(--color-dark);
+    font-style: normal;
+  }
+  strong { color: var(--color-primary); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.85em; }
+  th { background: var(--color-dark); color: #fff; padding: 8px 12px; text-align: left; }
+  td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  code { background: #eff6ff; color: var(--color-primary); padding: 2px 6px; border-radius: 4px; }
+  ul li { margin-bottom: 6px; }
+  .stat { font-size: 2.5em; font-weight: 700; color: var(--color-primary); }
 ---
 
+<!-- _class: title -->
+
 # ClauseLens
+
 ### Comprendre les conditions générales avant de signer
 
 ---
 
-## Contexte — Ce que font les Français
+<!-- _class: divider -->
 
-> **41,6 millions** de Français ont effectué au moins un achat en ligne
+## Contexte
+
+Le problème que personne ne voit venir
+
+---
+
+## Ce que font les Français chaque jour
+
+> **41,6 millions** de Français ont effectué au moins un achat en ligne —
 > soit **73% de la population** de plus de 15 ans *(FEVAD)*
 
 À chaque acte du quotidien, une condition générale :
@@ -27,38 +93,75 @@ paginate: true
 
 ---
 
-## Contexte — Ce que personne ne lit
+## Ce que personne ne lit
 
-- **7 Français sur 10** ne lisent pas ou rarement les conditions générales *(OpinionWay)*
-- Jusqu'à **6h52** pour lire certaines CGV en entier *(Que Choisir)*
+<br>
 
-### Pourquoi personne ne lit ?
+**7 Français sur 10** ne lisent pas ou rarement les conditions générales *(OpinionWay)*
 
-- Vocabulaire juridique inaccessible
-- Des dizaines de pages, structure non linéaire
-- Des clauses défavorables, parfois volontairement peu visibles
+**Jusqu'à 6h52** pour lire certaines CGV en entier *(Que Choisir)*
+
+<br>
+
+### Pourquoi ?
+
+- Vocabulaire juridique inaccessible, dizaines de pages, structure non linéaire
+- Clauses défavorables, parfois volontairement peu visibles
 - Manque de temps
-- Risques cachés — découverts seulement en cas de problème
+- **Risques cachés — découverts seulement en cas de problème**
 
 ---
+
+<!-- _class: divider -->
 
 ## Problématique
 
-> **Comment aider les utilisateurs à identifier rapidement
-> les clauses importantes d'une condition générale
-> sans remplacer l'expertise juridique ?**
+---
+
+<br><br>
+
+> ### Comment aider les utilisateurs à identifier rapidement les clauses importantes d'une condition générale **sans remplacer l'expertise juridique ?**
 
 ---
 
-## Solution proposée — ClauseLens
+<!-- _class: divider -->
+
+## Solution
+
+ClauseLens
+
+---
+
+## ClauseLens — L'assistant qui lit pour vous
 
 Un assistant IA qui, en fonction du **type** de conditions générales :
 
+<br>
+
 ✅ **Extrait et met en lumière** les points d'attention avant de signer
 
-✅ **Réduit le temps de lecture** (de plusieurs heures à quelques secondes)
+✅ **Réduit le temps de lecture** — de plusieurs heures à quelques secondes
 
 ✅ **Améliore la compréhension** grâce à une reformulation accessible
+
+---
+
+## Comment ça marche — 3 étapes
+
+<br>
+
+**① Déposez votre document**
+Collez le texte ou importez un fichier PDF
+
+<br>
+
+**② ClauseLens analyse**
+Détecte le type de document → applique le prompt expert → extrait les clauses clés
+
+<br>
+
+**③ Lisez ce qui compte**
+Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 
 ---
 
@@ -66,16 +169,22 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 
 | Rôle | Responsabilité |
 |---|---|
-| **Juristes** | Validation des prompts d'extraction, définition des clauses importantes par type |
+| **Juristes** | Définir les clauses importantes par type, rédiger et affiner les prompts |
 | **Product Manager** | Priorisation, roadmap, coordination |
-| **Développeur IA** | Architecture LLM, prompts, guardrails, intégrations |
+| **Développeur IA** | Architecture LLM, guardrails, intégrations |
 | **Développeur frontend** | Interface utilisateur |
 | **UX Designer** | Expérience de lecture, présentation des résultats |
 | **Utilisateurs finaux** | Tests, retours, validation de l'utilité |
 
 ---
 
-## Architecture technique — Vision utilisateur
+<!-- _class: divider -->
+
+## Architecture technique
+
+---
+
+## Vision utilisateur
 
 ```
 ┌─────────────────────────────────────────────────────┐
@@ -86,7 +195,7 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 │  3. Reçoit un résumé structuré des clauses clés      │
 └─────────────────────────────────────────────────────┘
          │                          ▲
-         │ Document                 │ Résumé HTML structuré
+         │ Document                 │ Résumé structuré
          ▼                          │
 ┌─────────────────────────────────────────────────────┐
 │                   CLAUSELENS                         │
@@ -99,23 +208,19 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
 
 ---
 
-## Architecture technique — Vision juriste
+## Vision juriste — Le rôle des prompts
 
 ```
   JURISTE
-  │
-  │  Rôle : affiner les prompts dans Langfuse
-  │  • prompt de détection du type de document
-  │  • prompts d'extraction par type de CG
-  │  • tester et valider la qualité des résultats
-  │  • versionner les prompts (production / draft)
+  │  • Rédige et affine les prompts dans Langfuse
+  │  • Prompt de détection du type de document
+  │  • Prompts d'extraction par type de CG
+  │  • Teste, valide et versionne (production / draft)
   │
   └──────────────────▶ ┌──────────────────────────────────┐
                         │             Langfuse              │
-                        │                                   │
                         │  [1] Prompt de détection du type  │
                         │  [2] Prompts d'extraction par CG  │
-                        │      (CGV, CGA, CGU…)             │
                         └────────┬─────────────┬───────────┘
                                  │             │
                         [1] Prompt        [2] Prompt
@@ -123,23 +228,17 @@ Un assistant IA qui, en fonction du **type** de conditions générales :
                                  │             │
 Document entrant                 ▼             │
 (texte ou PDF) ─────▶ ┌──────────────────┐    │
-                       │ Détection du     │    │
-                       │ type de document │    │
+                       │ Détection type   │    │
                        │ (Mistral)        │    │
                        └────────┬─────────┘    │
-                                │ CGV / CGA /  │
-                                │ CGU / ...    │
-                                ▼              ▼
-                       ┌────────────────────────────┐
-                       │       Extraction LLM        │
-                       │   (OpenAI / Anthropic)      │
-                       │                             │
-                       │  Prompt juriste + document  │
-                       │  → clauses importantes      │
-                       └─────────────┬──────────────┘
-                                     │ HTML structuré
-                                     ▼
-                            Restitution à l'utilisateur
+                                │              ▼
+                                └──▶ ┌──────────────────┐
+                                     │  Extraction LLM  │
+                                     │  (OpenAI/Anthr.) │
+                                     └────────┬─────────┘
+                                              │ HTML structuré
+                                              ▼
+                                     Utilisateur
 ```
 
 ---
@@ -147,28 +246,22 @@ Document entrant                 ▼             │
 ## Architecture MVP
 
 ```
-┌──────────────┐     POST      ┌──────────────────────────────────┐
-│ clause-      │ ──────────▶  │  n8n — Orchestration              │
-│ radar.html   │              │                                    │
-│ (interface)  │ ◀──────────  │  Main Workflow                     │
-└──────────────┘   Résultat   │  ├── Webhook (entrée)             │
-                              │  ├── Switch (texte / fichier)      │
-                              │  └── Execute Sub-Workflow          │
-                              │                                    │
-                              │  Sub-Workflow                      │
-                              │  ├── Détection type (Mistral)      │
-                              │  ├── Get prompt (Langfuse)         │
-                              │  └── Extraction (OpenAI/Anthropic) │
-                              └──────────────┬───────────────────┘
-                                             │
-                    ┌────────────────────────┼──────────────────┐
-                    ▼                        ▼                  ▼
-             ┌────────────┐        ┌──────────────┐   ┌──────────────┐
-             │  LiteLLM   │        │   Langfuse   │   │  PostgreSQL  │
-             │  (proxy)   │        │ (traces +    │   │  + Redis     │
-             │            │        │  prompts)    │   │  (données)   │
-             └─────┬──────┘        └──────────────┘   └──────────────┘
-                   │
+┌──────────────┐  POST   ┌─────────────────────────────────────┐
+│ Interface    │ ──────▶ │  n8n — Orchestration                 │
+│ Web          │         │  ├── Webhook (entrée)                │
+│              │ ◀──────  │  ├── Switch (texte / fichier PDF)   │
+└──────────────┘ Résultat │  ├── Détection type (Mistral)       │
+                          │  ├── Get prompt (Langfuse)           │
+                          │  └── Extraction (OpenAI / Anthropic) │
+                          └──────────────┬──────────────────────┘
+                                         │
+                    ┌────────────────────┼──────────────────┐
+                    ▼                    ▼                  ▼
+             ┌────────────┐    ┌──────────────┐   ┌──────────────┐
+             │  LiteLLM   │    │   Langfuse   │   │  PostgreSQL  │
+             │  Proxy LLM │    │  Traces +    │   │  + Redis     │
+             └─────┬──────┘    │  Prompts     │   └──────────────┘
+                   │           └──────────────┘
        ┌───────────┼───────────┐
        ▼           ▼           ▼
    OpenAI     Anthropic     Mistral
@@ -176,20 +269,34 @@ Document entrant                 ▼             │
 
 ---
 
-## RGPD et conformité EU AI Act
+<!-- _class: divider -->
 
-### Classification
-ClauseLens est un système à **risque limité** selon l'EU AI Act :
-il assiste sans décider — l'utilisateur reste maître de sa signature.
+## Conformité
 
-### Mesures techniques (via LiteLLM)
+RGPD & EU AI Act
+
+---
+
+## RGPD et EU AI Act
+
+**Classification** : ClauseLens est un système à **risque limité** selon l'EU AI Act —
+il assiste sans décider, l'utilisateur reste maître de sa signature.
+
+### Mesures techniques disponibles via LiteLLM
+
 | Mesure | Outil | Statut |
 |---|---|---|
-| Pseudonymisation PII avant envoi LLM | Presidio (guardrail) | Configurable |
+| Pseudonymisation PII avant envoi au LLM | Presidio (guardrail) | Configurable |
 | Modération du contenu | LlamaGuard (guardrail) | Configurable |
 | Traçabilité de chaque appel LLM | Langfuse | ✅ Actif |
 | Non-log des messages bruts | `redact_messages_in_logging_by_default` | Configurable |
 | Résidence des données (UE) | Modèles locaux / Mistral EU | Configurable |
+
+---
+
+<!-- _class: divider -->
+
+## Limites
 
 ---
 
@@ -203,35 +310,48 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 
 ---
 
-## Limites et difficultés rencontrées — MVP
+## Limites MVP — Performance & Couverture
 
 | Limite | Description |
 |---|---|
-| ⏳ **Temps d'attente** | Long sur les documents volumineux — le LLM traite l'intégralité du texte |
-| 🧠 **Limite du modèle** | Contrainte sur le nombre de tokens par minute (ex : GPT-4o mini) |
-| 💸 **Coût par analyse** | Chaque appel LLM a un coût — pas de mutualisation sur le MVP |
-| 🔀 **Mauvaise détection du type** | Un document peut être classé dans la mauvaise catégorie (ex : CGV vs conditions bancaires) |
-| 📄 **Documents composés** | Un document contenant plusieurs types (ex : CGV + CGU SNCF) — seule une partie est extraite |
-| 📉 **Drift de détection** | La détection du type se dégrade sur des formulations inhabituelles ou des documents atypiques |
-| 🌍 **Français uniquement** | Les documents en langue étrangère ne sont pas gérés — problème pour les achats sur plateformes étrangères |
-| 📚 **Pas de base de connaissance** | Aucun RAG — le LLM ne peut pas croiser avec le Code civil ou le Code des assurances |
-| 👥 **Scalabilité limitée** | Architecture mono-utilisateur sur le MVP — pas de gestion de charge concurrente |
+| ⏳ **Temps d'attente** | Long sur les documents volumineux |
+| 🧠 **Limite du modèle** | Quota de tokens par minute (GPT-4o mini) |
+| 💸 **Coût par analyse** | Pas de mutualisation sur le MVP |
+| 👥 **Scalabilité limitée** | Architecture mono-utilisateur, sans gestion de charge |
+| 🌍 **Français uniquement** | Documents étrangers non gérés |
 
 ---
 
+## Limites MVP — Qualité de la détection
+
+| Limite | Description |
+|---|---|
+| 🔀 **Mauvaise classification** | Un document peut être pris pour un autre (ex : CGV vs conditions bancaires) |
+| 📄 **Documents composés** | CGV + CGU dans le même fichier (ex : SNCF) — seule une partie est extraite |
+| 📉 **Drift de détection** | Formulations inhabituelles ou atypiques dégradent la classification |
+| 📚 **Pas de base de connaissance** | Aucun RAG — pas de croisement avec le Code civil ou le Code des assurances |
+
+---
+
+<!-- _class: divider -->
+
 ## Roadmap
 
-### Court terme — ~1 mois
+---
+
+## Court terme — ~1 mois
 
 | | |
 |---|---|
 | ✅ | MVP fonctionnel — interface web, stack complète |
-| 📄 | 7 types de documents supportés : `CGV` · `CGA` · `CG Abonnement` · `CG Assurance` · `CGU` · `CG Garantie` · `CG Location` |
+| 📄 | 7 types de documents : `CGV` · `CGA` · `CG Abonnement` · `CG Assurance` · `CGU` · `CG Garantie` · `CG Location` |
 | 🧪 | Tests internes et validation de la qualité d'extraction |
 | 🏗️ | Mise à jour de l'architecture selon les retours techniques |
 | 👥 | Déploiement à un échantillon réduit d'utilisateurs |
 
-### Moyen terme — ~3 mois
+---
+
+## Moyen terme — ~3 mois
 
 | | |
 |---|---|
@@ -241,17 +361,21 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 | ⚖️ | IHM dédiée aux juristes pour identifier et valider les clauses importantes |
 | 📚 | RAG sur documents de référence (Code civil, Code des assurances) |
 
-### Long terme — ~9 mois
+---
+
+## Long terme — ~9 mois
 
 | | |
 |---|---|
 | 🔊 | Résumé audio des clauses importantes |
-| 🌍 | Support multilingues |
+| 🌍 | Support multilingue |
 | 📑 | Prise en charge de nouveaux types de documents |
 | 📱 | Application mobile avec OCR pour les versions papier |
-| 🤖 | Serveur MCP pour accessibilité depuis les chatbots (ChatGPT, Claude…) |
+| 🤖 | Serveur MCP — accessibilité depuis les chatbots (ChatGPT, Claude…) |
 
 ---
+
+<!-- _class: title -->
 
 # Merci
 
@@ -263,9 +387,9 @@ tout en gardant l'humain au centre de la décision.
 
 ---
 
-## Annexe — Prompts disponibles
+## Annexe — Prompts d'extraction disponibles
 
-| Prompt | Type de document | Points d'attention extraits |
+| Prompt | Type de document | Clauses extraites |
 |---|---|---|
 | `CGAssurance` | Conditions d'assurance | Événements couverts, exclusions, franchises, plafonds |
 | `CGVente` | Conditions de vente | Prix, livraison, rétractation, garanties légales |
@@ -274,3 +398,4 @@ tout en gardant l'humain au centre de la décision.
 | `CGGarantie` | Garanties | Couverture, exclusions, franchise, plafonds |
 | `CGLocation` | Location | Durée, dépôt de garantie, état des lieux, responsabilités |
 | `CGUtilisation` | CGU | Données personnelles, interdictions, responsabilité plateforme |
+| `DocumentDetection` | *(tous types)* | Prompt de classification du type de document |
