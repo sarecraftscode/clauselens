@@ -223,6 +223,16 @@ il assiste sans décider — l'utilisateur reste maître de sa signature.
 | ⚖️ | IHM dédiée aux juristes pour identifier et valider les clauses importantes |
 | 📚 | RAG sur documents de référence (Code civil, Code des assurances) |
 
+### Long terme — ~9 mois
+
+| | |
+|---|---|
+| 🔊 | Résumé audio des clauses importantes |
+| 🌍 | Support multilingues |
+| 📑 | Prise en charge de nouveaux types de documents |
+| 📱 | Application mobile avec OCR pour les versions papier |
+| 🤖 | Serveur MCP pour accessibilité depuis les chatbots (ChatGPT, Claude…) |
+
 ---
 
 # Merci
