@@ -93,6 +93,16 @@ Déposez vos fichiers JSON dans `n8n/workflows/` puis exécutez :
 docker compose up n8n-import
 ```
 
+## Générer la présentation
+
+```bash
+make presentation        # PDF + HTML
+make presentation-pdf    # PDF uniquement
+make presentation-html   # HTML uniquement
+```
+
+Prérequis : Docker. Les fichiers générés (`docs/presentation.pdf`, `docs/presentation.html`) sont ignorés par git.
+
 ## Arrêter la stack
 
 ```bash
