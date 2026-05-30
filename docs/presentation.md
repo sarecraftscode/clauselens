@@ -165,7 +165,7 @@ Un résumé structuré et hiérarchisé — vous signez en connaissance de cause
 | **Évaluateur qualité LLM** | Mesure systématique de la qualité des extractions, benchmarking |
 | **Développeur frontend** | Interface utilisateur |
 | **UX Designer** | Expérience de lecture, présentation des résultats |
-| **DPO (Délégué à la Protection des Données)** | Conformité traitement des données, analyse d'impact (DPIA) |
+| **DPO (Délégué à la Protection des Données)** | Conformité traitement des données, analyse d'impact (DPIA — Data Protection Impact Assessment) |
 | **Utilisateurs finaux** | Tests, retours, validation de l'utilité |
 
 ---
