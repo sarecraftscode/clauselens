@@ -78,7 +78,7 @@ Le problème que personne ne voit venir
 ## Ce que font les Français chaque jour
 
 > **41,6 millions** de Français ont effectué au moins un achat en ligne —
-> soit **73% de la population** de plus de 15 ans *(FEVAD)*
+> soit **73% de la population** de plus de 15 ans — *[FEVAD](https://www.fevad.com/edition-2025-des-chiffres-cles-du-e-commerce/)*
 
 À chaque acte du quotidien, une condition générale :
 
