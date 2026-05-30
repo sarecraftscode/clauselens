@@ -234,6 +234,8 @@ RGPD & EU AI Act
 > Assiste sans décider — l'utilisateur reste maître de sa signature.
 >
 > **Obligation** : l'utilisateur est informé qu'il interagit avec une IA avant toute analyse.
+>
+> 🛡️ **Surveillance de la conformité** via guardrails — le proxy LLM fournit des politiques de base (modération du contenu, détection de PII, audit des appels)
 
 ---
 
@@ -247,6 +249,8 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 ✅ L'utilisateur est **informé** de ce qui est envoyé au LLM
 
 ⚠️ Certains documents peuvent contenir des données personnelles — traitement à surveiller
+
+🛡️ **Surveillance de la conformité** via guardrails — le proxy LLM fournit des politiques de base (modération du contenu, détection de PII, audit des appels)
 
 ---
 
