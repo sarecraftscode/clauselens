@@ -69,7 +69,7 @@ LANGFUSE_SECRET_KEY=sk-lf-...
 
 ### 5. Connecter n8n à LiteLLM
 
-Dans n8n → **Settings** → **Credentials** → **New** → **OpenAI** :
+Dans n8n, barre latérale gauche → **Credentials** → **Add credential** → **OpenAI** :
 - **API Key** : votre clé LiteLLM
 - **Base URL** : `http://litellm:4000`
 

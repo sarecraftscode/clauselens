@@ -37,30 +37,34 @@ Générez une **Virtual Key** pour n8n : **Virtual Keys** → **Create New Key**
 1. Ouvrez `http://localhost:5678`
 2. Créez votre compte administrateur
 
-## Étape 5 — Configurer la credential LiteLLM dans n8n
+## Étape 5 — Importer les workflows n8n
 
-Dans n8n → **Settings** → **Credentials** → **New** → **OpenAI** :
+Importez les workflows avant de configurer les credentials — cela permet à n8n d'afficher les types de credentials utilisés.
+
+```bash
+docker compose up n8n-import
+```
+
+## Étape 6 — Configurer la credential LiteLLM dans n8n
+
+Dans n8n, les credentials sont accessibles depuis l'icône **Credentials** dans la barre latérale gauche (et non via Settings → Credentials, qui n'existe plus dans les versions récentes).
+
+**Barre latérale gauche** → **Credentials** → **Add credential** → **OpenAI** :
 
 - **API Key** : la Virtual Key générée à l'étape 3
 - **Base URL** : `http://litellm:4000`
 
 > Tous les nœuds OpenAI de n8n passeront par LiteLLM et seront tracés dans Langfuse.
 
-## Étape 6 — Configurer la credential Langfuse dans n8n
+## Étape 7 — Configurer la credential Langfuse dans n8n
 
-Dans n8n → **Settings** → **Credentials** → **New** → **Langfuse** :
+**Barre latérale gauche** → **Credentials** → **Add credential** → **Langfuse** :
 
 - **Langfuse URL** : `http://langfuse:3000`
 - **Public Key** : votre Public Key Langfuse
 - **Secret Key** : votre Secret Key Langfuse
 
 > Utilisez `langfuse` et non `localhost` — n8n communique avec Langfuse via le réseau Docker interne.
-
-## Étape 7 — Importer les workflows n8n
-
-```bash
-docker compose up n8n-import
-```
 
 ## Étape 8 — Importer les prompts dans Langfuse
 
