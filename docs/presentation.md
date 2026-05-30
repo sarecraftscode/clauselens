@@ -283,6 +283,7 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 
 | Limite | Description |
 |---|---|
+| ⚠️ **Erreurs de détection du type** | Le type peut être mal identifié si les clauses sont non reconnues, si le document mélange plusieurs types de conditions, ou si la structure est atypique |
 | 🔀 **Mauvaise classification** | Un document peut être pris pour un autre (ex : CGV vs conditions bancaires) |
 | 📄 **Documents composés** | CGV + CGU dans le même fichier (ex : SNCF) — seule une partie est extraite |
 | 📉 **Drift de détection** | Formulations inhabituelles ou atypiques dégradent la classification |
