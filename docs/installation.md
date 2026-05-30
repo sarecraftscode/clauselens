@@ -2,9 +2,34 @@
 
 ## Prérequis
 
-- [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/) installés
-- [jq](https://stedolan.github.io/jq/) installé : `sudo apt install jq`
-- Des clés API pour au moins un provider LLM (OpenAI, Anthropic, etc.)
+### Outils système
+
+| Outil | Version minimale | Installation |
+|---|---|---|
+| [Docker](https://docs.docker.com/get-docker/) | 24+ | `https://docs.docker.com/get-docker/` |
+| Docker Compose v2 | 2.20+ | intégré à Docker Desktop / `apt install docker-compose-plugin` |
+| [Git](https://git-scm.com/) | 2+ | `sudo apt install git` |
+| [openssl](https://www.openssl.org/) | — | pré-installé sur Linux/macOS, inclus dans Git Bash sur Windows |
+| [curl](https://curl.se/) | — | `sudo apt install curl` |
+| [jq](https://stedolan.github.io/jq/) | 1.6+ | `sudo apt install jq` |
+
+> **Docker Compose v2** — les commandes de ce guide utilisent `docker compose` (sans tiret). Si vous avez l'ancienne version (`docker-compose`), mettez à jour vers le plugin v2.
+
+### Ressources machine recommandées
+
+| Ressource | Minimum | Recommandé |
+|---|---|---|
+| RAM | 4 Go | 8 Go |
+| Disque libre | 5 Go | 10 Go |
+| CPU | 2 cœurs | 4 cœurs |
+
+### Clés API
+
+Au moins une clé API pour un provider LLM :
+
+- **OpenAI** : `OPENAI_API_KEY=sk-...`
+- **Anthropic** : `ANTHROPIC_API_KEY=sk-ant-...`
+- **Groq** : `GROQ_API_KEY=gsk_...`
 
 ## 1. Cloner le dépôt
 
@@ -19,21 +44,52 @@ cd clauselens
 cp .env.example .env
 ```
 
-Générez les secrets requis :
+### Générer les secrets
+
+Exécutez ces commandes pour obtenir des valeurs aléatoires :
 
 ```bash
-echo "LANGFUSE_NEXTAUTH_SECRET=$(openssl rand -base64 32)" >> .env
-echo "LANGFUSE_SALT=$(openssl rand -base64 32)" >> .env
-echo "LANGFUSE_ENCRYPTION_KEY=$(openssl rand -base64 32)" >> .env
-echo "N8N_ENCRYPTION_KEY=$(openssl rand -base64 32)" >> .env
+openssl rand -base64 32   # pour LANGFUSE_NEXTAUTH_SECRET
+openssl rand -base64 32   # pour LANGFUSE_SALT
+openssl rand -hex 32      # pour LANGFUSE_ENCRYPTION_KEY
+openssl rand -base64 32   # pour N8N_ENCRYPTION_KEY
 ```
 
-Renseignez ensuite vos clés API et la master key LiteLLM dans `.env` :
+> **Important — ne pas utiliser `echo >> .env`** : `.env.example` contient déjà ces variables (vides). Ajouter des lignes en fin de fichier crée des doublons ; Docker Compose lit la **première** occurrence et ignore les suivantes. Renseignez les valeurs directement dans `.env`.
+
+### Variables Langfuse
+
+| Variable | Commande de génération | Format attendu |
+|---|---|---|
+| `LANGFUSE_NEXTAUTH_SECRET` | `openssl rand -base64 32` | base64 (44 chars) |
+| `LANGFUSE_SALT` | `openssl rand -base64 32` | base64 (44 chars) |
+| `LANGFUSE_ENCRYPTION_KEY` | `openssl rand -hex 32` | **hex 64 chars** — pas base64 |
+
+> `LANGFUSE_ENCRYPTION_KEY` **doit** être en hexadécimal (64 caractères). Utiliser `openssl rand -base64 32` provoque une erreur au démarrage : `ENCRYPTION_KEY must be 256 bits, 64 string characters in hex format`.
+
+Exemple de `.env` correctement rempli pour Langfuse :
+
+```env
+LANGFUSE_NEXTAUTH_SECRET=7jrx04/W2pQD5opSkgcExj78y7CapHOsFYs8YlKXmjs=
+LANGFUSE_SALT=DwGqLJ9gM6dYdmKgLrhq7WeR6TDYW9EeZI2v9QV7gh0=
+LANGFUSE_ENCRYPTION_KEY=4c712cc4e612668a9cab622232337fe0521495bb1e4cb6e977207df13380ddc3
+```
+
+### Variables LiteLLM et n8n
+
+```env
+LITELLM_MASTER_KEY=sk-changeme        # changez cette valeur
+N8N_ENCRYPTION_KEY=<openssl rand -base64 32>
+```
+
+### Clés API LLM
+
+Au moins une clé est requise :
 
 ```env
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
-LITELLM_MASTER_KEY=sk-changeme   # changez cette valeur
+GROQ_API_KEY=gsk_...
 ```
 
 ## 3. Lancer la stack

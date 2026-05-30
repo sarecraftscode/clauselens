@@ -1,6 +1,6 @@
 # ClauseLens
 
-ClauseLens est une solution d'extraction automatique des clauses importantes dans les conditions générales (contrats, CGU, CGV, polices d'assurance, etc.).
+ClauseLens est une solution d'extraction automatique des clauses importantes dans les conditions générales (CGU, CGV, CGA, etc.).
 
 ## Stack technique
 
@@ -14,20 +14,25 @@ ClauseLens est une solution d'extraction automatique des clauses importantes dan
 
 ## Démarrage rapide
 
+> **Prérequis** — Docker 24+, Docker Compose v2, openssl, curl, jq et au moins une clé API LLM.
+> Voir [docs/installation.md](docs/installation.md) pour le détail.
+
 ### 1. Configurer l'environnement
 
 ```bash
 cp .env.example .env
 ```
 
-Générez les secrets requis :
+Générez les secrets et renseignez-les **directement dans `.env`** (ne pas utiliser `echo >>` — cela créerait des doublons avec les entrées vides du template) :
 
-```bash
-echo "LANGFUSE_NEXTAUTH_SECRET=$(openssl rand -base64 32)" >> .env
-echo "LANGFUSE_SALT=$(openssl rand -base64 32)" >> .env
-echo "LANGFUSE_ENCRYPTION_KEY=$(openssl rand -base64 32)" >> .env
-echo "N8N_ENCRYPTION_KEY=$(openssl rand -base64 32)" >> .env
-```
+| Variable | Commande |
+|---|---|
+| `LANGFUSE_NEXTAUTH_SECRET` | `openssl rand -base64 32` |
+| `LANGFUSE_SALT` | `openssl rand -base64 32` |
+| `LANGFUSE_ENCRYPTION_KEY` | `openssl rand -hex 32` ⚠️ hex uniquement |
+| `N8N_ENCRYPTION_KEY` | `openssl rand -base64 32` |
+
+> `LANGFUSE_ENCRYPTION_KEY` doit être en **hexadécimal** (64 chars). Le format base64 provoque une erreur au démarrage de Langfuse.
 
 Renseignez vos clés API dans `.env` :
 
