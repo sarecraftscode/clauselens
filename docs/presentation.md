@@ -265,6 +265,8 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 - ⚖️ **Ne remplace pas un juriste** — aucune valeur juridique contraignante
 - 📄 **Ne dispense pas d'une lecture complète** — assistant, pas substitut
 - 🤖 **Risques d'hallucinations résiduels** — les LLM peuvent produire des erreurs
+- 🔍 **Absence de sources** — le résumé ne cite pas les numéros d'article ou de clause du document original
+- 🎯 **Biais des prompts** — seules les clauses prévues sont extraites, les clauses inhabituelles sont ignorées même si importantes
 
 ---
 
