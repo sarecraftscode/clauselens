@@ -266,12 +266,23 @@ RGPD & EU AI Act
 
 ---
 
-## RGPD et EU AI Act
+## EU AI Act — Niveaux de risque
 
-**Classification** : ClauseLens est un système à **risque limité** selon l'EU AI Act —
-il assiste sans décider, l'utilisateur reste maître de sa signature.
+| Niveau | Exemples | Obligation |
+|---|---|---|
+| 🚫 **Inacceptable** | Notation sociale, surveillance biométrique en temps réel | Interdit |
+| 🔴 **Élevé** | Recrutement, crédit, justice, infrastructures critiques | Évaluation de conformité obligatoire |
+| 🟡 **Limité** | Chatbots, assistants IA, systèmes de recommandation | Transparence envers l'utilisateur |
+| 🟢 **Minimal** | Filtres anti-spam, jeux vidéo, IA de productivité | Aucune obligation spécifique |
 
-### Mesures techniques disponibles via LiteLLM
+**ClauseLens → Risque limité 🟡** — assiste sans décider, l'utilisateur reste maître de sa signature.
+Obligation : informer l'utilisateur qu'il interagit avec un système d'IA.
+
+---
+
+## RGPD et EU AI Act — Mesures techniques
+
+### Mesures disponibles via LiteLLM
 
 | Mesure | Outil | Statut |
 |---|---|---|
