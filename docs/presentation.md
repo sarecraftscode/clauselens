@@ -274,7 +274,7 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 
 | Limite | Description |
 |---|---|
-| 📏 **Fenêtre contextuelle** | Un document très long (100+ pages) peut dépasser la limite du modèle et être tronqué silencieusement — sans avertissement |
+| 📏 **Fenêtre contextuelle** | Un document très long peut dépasser la limite du modèle et être tronqué silencieusement — sans avertissement |
 | 🌍 **Français uniquement** | Documents étrangers non gérés |
 
 ---
