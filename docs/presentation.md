@@ -114,7 +114,7 @@ style: |
 
 <!-- _class: divider -->
 
-## Solution
+## Solution proposée
 
 ClauseLens
 
