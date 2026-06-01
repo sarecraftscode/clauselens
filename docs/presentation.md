@@ -353,8 +353,8 @@ Phase 1 — Lancement    Phase 2 — Consolidation     Phase 3 — Enrichissemen
 ✅ MVP fonctionnel     🔧 Amélioration des prompts  ⚖️ IHM juriste              🔊 Résumé audio
 🔒 Sécurisation IHM    🎨 Amélioration UX résultat  📑 Nouveaux types de docs   🌍 Multilingue
 🧪 Tests 10 utilis.    🔗 Traçabilité dans résultat                             📱 Mobile + OCR
-                       🎯 Détection type améliorée                              🔌 Serveur MCP
-                       📏 Gestion documents longs
+⚖️ Évaluation prompts  🎯 Détection type améliorée                              🔌 Serveur MCP
+   par le juriste      📏 Gestion documents longs
 
 ──────────────────────────────────────────────────────────────────────────────────────────────
 💡 À envisager si succès : modèle dédié · fine-tuning sur corpus de conditions générales
