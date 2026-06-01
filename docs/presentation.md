@@ -67,7 +67,22 @@ style: |
 
 ---
 
-## Ce que font les Français chaque jour
+## Rencontrez Marie
+
+**34 ans — Responsable marketing dans une PME**
+
+> *"Je clique sur J'accepte comme tout le monde.<br>Je sais que c'est risqué, mais 47 pages de juridique…"*
+
+<br>
+
+Marie achète en ligne, prend des abonnements, loue des voitures, souscrit des assurances.
+À chaque fois, une condition générale l'attend.
+
+À chaque fois, elle signe sans lire.
+
+---
+
+## Le quotidien de Marie
 
 > **41,6 millions** de Français ont effectué au moins un achat en ligne —
 > soit **73% de la population** de plus de 15 ans — *[FEVAD](https://www.fevad.com/edition-2025-des-chiffres-cles-du-e-commerce/)*
@@ -85,9 +100,7 @@ style: |
 
 ---
 
-## Ce que personne ne lit
-
-<br>
+## Marie ne lit pas — comme 7 Français sur 10
 
 **7 Français sur 10** ne lisent pas ou rarement les conditions générales — *[OpinionWay](https://www.isoc.fr/cgu-opinionway/)*
 
@@ -95,7 +108,7 @@ style: |
 
 <br>
 
-### Pourquoi ?
+### Pourquoi Marie ne lit pas ?
 
 - Vocabulaire juridique inaccessible, dizaines de pages, structure non linéaire
 - Clauses défavorables, parfois volontairement peu visibles
@@ -104,11 +117,29 @@ style: |
 
 ---
 
+## Le jour où Marie a eu un problème
+
+<br>
+
+> Marie souscrit un abonnement de streaming en période d'essai.
+>
+> Trois mois plus tard, elle constate un prélèvement mensuel.
+>
+> La clause de **renouvellement automatique** était à la page 34.
+>
+> Elle n'avait jamais lu la page 34.
+
+<br>
+
+*Ce scénario arrive tous les jours, pour des millions de Français.*
+
+---
+
 <!-- _class: divider -->
 
 ## Problématique
 
-> ### Comment aider les utilisateurs à identifier rapidement les clauses importantes d'une condition générale **sans remplacer l'expertise juridique ?**
+> ### Comment aider Marie — et des millions d'utilisateurs — à identifier rapidement les clauses importantes **sans remplacer l'expertise juridique ?**
 
 ---
 
@@ -120,7 +151,7 @@ ClauseLens
 
 ---
 
-## ClauseLens — L'assistant qui lit pour vous
+## ClauseLens — L'assistant qui lit pour Marie
 
 Un assistant IA qui, en fonction du **type** de conditions générales :
 
