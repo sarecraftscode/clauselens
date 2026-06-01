@@ -75,9 +75,9 @@ style: |
 
 <br>
 
-Marie achète en ligne, prend des abonnements, loue des voitures, souscrit des assurances.
-À chaque fois, une condition générale l'attend.
+Marie commande sur Amazon, réserve une voiture sur un comparateur, souscrit son assurance habitation en ligne, prend un abonnement streaming, achète ses billets de train.
 
+À chaque fois, une condition générale l'attend.
 À chaque fois, elle signe sans lire.
 
 ---
