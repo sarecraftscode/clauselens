@@ -69,34 +69,19 @@ style: |
 
 ## Rencontrez Marie
 
-**34 ans**
+**34 ans** — *(41,6 millions de Français lui ressemblent — [FEVAD](https://www.fevad.com/edition-2025-des-chiffres-cles-du-e-commerce/))*
 
 > *"Je clique sur J'accepte comme tout le monde.<br>Je sais que c'est risqué, mais 47 pages de juridique…"*
 
-<br>
-
-Marie commande sur Amazon, réserve une voiture sur un comparateur, souscrit son assurance habitation en ligne, prend un abonnement streaming, achète ses billets de train.
-
-À chaque fois, une condition générale l'attend.
-À chaque fois, elle signe sans lire.
-
----
-
-## Le quotidien de Marie
-
-> **41,6 millions** de Français ont effectué au moins un achat en ligne —
-> soit **73% de la population** de plus de 15 ans — *[FEVAD](https://www.fevad.com/edition-2025-des-chiffres-cles-du-e-commerce/)*
-
-À chaque acte du quotidien, une condition générale :
-
-| Acte | Type de document |
+| Acte de Marie | Condition générale |
 |---|---|
-| 🛍️ Acheter | CGV — Conditions Générales de Vente |
-| 📋 Souscrire une assurance | CGA — Conditions Générales d'Assurance |
-| 💻 Utiliser un site internet | CGU — Conditions Générales d'Utilisation |
-| 🔄 Prendre un abonnement | CG Abonnement |
-| 🚗 Louer (voiture, outils…) | CG Location |
-| 🛡️ Bénéficier d'une garantie | CG Garantie |
+| 🛍️ Commande sur Amazon | Conditions Générales de Vente |
+| 🚗 Réserve une voiture en ligne | Conditions Générales de Location |
+| 🏠 Souscrit son assurance habitation | Conditions Générales d'Assurance |
+| 🔄 Prend un abonnement streaming | Conditions Générales d'Abonnement |
+| 🚆 Achète ses billets de train | CGV + Conditions Générales d'Utilisation |
+
+À chaque fois, elle signe sans lire.
 
 ---
 
