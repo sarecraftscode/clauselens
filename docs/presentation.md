@@ -351,9 +351,9 @@ Phase 1 — Lancement    Phase 2 — Consolidation     Phase 3 — Enrichissemen
 ~1 mois                ~3 mois                      ~6 mois                     ~9 mois
 ──────────────────     ─────────────────────────    ─────────────────────────   ──────────────────────
 ✅ MVP fonctionnel     🎨 Amélioration UX résultat  ⚖️ IHM juriste              🔊 Résumé audio
-⚖️ Évaluation et       🔗 Traçabilité dans résultat 📑 Nouveaux types de docs   🌍 Multilingue
+⚖️ Évaluation et       🔗 Traçabilité dans résultat 📑 Gestion de nouveaux      🌍 Multilingue
    amélioration        🎯 Détection type améliorée                              📱 Mobile + OCR
-   prompts (juriste)   📏 Gestion documents longs                               🔌 Serveur MCP
+   prompts (juriste)   📏 Gestion documents longs   types de CG                 🔌 Serveur MCP
 👥 Déploiement pool
    réduit utilis.
 
