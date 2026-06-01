@@ -350,11 +350,11 @@ Les CGV/CGU sont des **documents publics** — risque faible, mais pas nul.
 Phase 1 — Lancement    Phase 2 — Consolidation     Phase 3 — Enrichissement    Phase 4 — Expansion
 ~1 mois                ~3 mois                      ~6 mois                     ~9 mois
 ──────────────────     ─────────────────────────    ─────────────────────────   ──────────────────────
-✅ MVP fonctionnel     🔧 Amélioration des prompts  ⚖️ IHM juriste              🔊 Résumé audio
-⚖️ Évaluation et       🎨 Amélioration UX résultat  📑 Nouveaux types de docs   🌍 Multilingue
-   amélioration        🔗 Traçabilité dans résultat                             📱 Mobile + OCR
-   prompts (juriste)   🎯 Détection type améliorée                              🔌 Serveur MCP
-👥 Déploiement pool    📏 Gestion documents longs
+✅ MVP fonctionnel     🎨 Amélioration UX résultat  ⚖️ IHM juriste              🔊 Résumé audio
+⚖️ Évaluation et       🔗 Traçabilité dans résultat 📑 Nouveaux types de docs   🌍 Multilingue
+   amélioration        🎯 Détection type améliorée                              📱 Mobile + OCR
+   prompts (juriste)   📏 Gestion documents longs                               🔌 Serveur MCP
+👥 Déploiement pool
    réduit utilis.
 
 ──────────────────────────────────────────────────────────────────────────────────────────────
