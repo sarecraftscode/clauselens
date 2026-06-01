@@ -69,7 +69,7 @@ style: |
 
 ## Rencontrez Marie
 
-**34 ans — Responsable marketing dans une PME**
+**34 ans**
 
 > *"Je clique sur J'accepte comme tout le monde.<br>Je sais que c'est risqué, mais 47 pages de juridique…"*
 
