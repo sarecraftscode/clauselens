@@ -141,8 +141,24 @@ function setLoading(v) {
 
 /* ── Accordion ── */
 function initAccordion() {
+  const h2s = Array.from(resultContent.querySelectorAll("h2"));
+  if (!h2s.length) return;
+
+  // Wrap each h2 + following siblings (until next h2) into a <section>
+  h2s.forEach((h2) => {
+    const section = document.createElement("section");
+    const toMove = [];
+    let node = h2.nextSibling;
+    while (node && node.nodeName !== "H2") {
+      toMove.push(node);
+      node = node.nextSibling;
+    }
+    h2.parentNode.insertBefore(section, h2);
+    section.appendChild(h2);
+    toMove.forEach((n) => section.appendChild(n));
+  });
+
   const sections = resultContent.querySelectorAll("section");
-  if (!sections.length) return;
 
   const ctrl = document.createElement("div");
   ctrl.className = "cr-controls";
