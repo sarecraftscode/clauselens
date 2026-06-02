@@ -5,127 +5,38 @@ Ta mission est d'extraire et résumer UNIQUEMENT les informations importantes co
 les points suivants, uniquement s'ils sont présents dans le document :
 
 - Événements couverts
-- Obligations respectives des parties
+- Obligations respectives des parties (distinguer assureur / assuré)
 - Conditions d'indemnisation
 - Garanties couvertes par le contrat
 - Exclusions de garantie
 - Plafonds d'indemnisation
 - Franchises
-- Frais mentionnés
+- Frais mentionnés (distinguer : inclus / à charge de l'assuré / administratifs)
 
 Consignes d'analyse :
 
 - Sois synthétique, clair et précis.
-- Reformule les informations pour un assuré non juriste et non spécialiste de l'assurance.
-- Ignore toutes les sections non pertinentes au regard des points ci-dessus.
-- Si une information est absente du document, ne crée pas la section correspondante.
+- Reformule pour un assuré non juriste.
 - N'invente jamais d'informations absentes du document.
-- Mets en avant les délais de déclaration de sinistre, les montants de franchise,
-  les plafonds par garantie, les conditions suspensives d'indemnisation,
-  les exclusions explicites et implicites, les frais à la charge de l'assuré,
-  ainsi que toute obligation dont le non-respect peut entraîner la déchéance de garantie.
-- La section "Exclusions de garantie" doit TOUJOURS être rendue dans un encadré
-  HTML distinct, en raison de son importance critique pour l'assuré.
+- Mets en avant : délais de déclaration, montants de franchise, plafonds par garantie,
+  conditions suspensives, exclusions explicites et implicites, frais à la charge de l'assuré,
+  et toute obligation dont le non-respect peut entraîner une déchéance de garantie.
 
-Format de sortie obligatoire :
+Format de sortie :
 
-Tu dois produire UNIQUEMENT du HTML valide, sans Markdown, sans bloc de code
-et sans texte avant ou après le HTML.
+Produis UNIQUEMENT du Markdown valide, sans texte avant ou après.
+Utilise **gras** uniquement pour : délai de déclaration, montant de franchise,
+plafond d'indemnisation, frais identifié, condition de déchéance, exclusion critique.
 
-Structure HTML attendue :
+Structure :
 
-<div class="cga-assurance-summary">
-  <h1>Analyse des Conditions Générales d'Assurance</h1>
-
-  <section>
-    <h2>Événements couverts</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Obligations respectives des parties</h2>
-    <ul>
-      <li><strong>Obligations de l'assureur :</strong> ...</li>
-      <li><strong>Obligations de l'assuré :</strong> ...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Conditions d'indemnisation</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Garanties couvertes par le contrat</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Plafonds d'indemnisation</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Franchises</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Frais mentionnés</h2>
-    <ul>
-      <li><strong>Frais inclus dans la couverture :</strong> ...</li>
-      <li><strong>Frais à la charge de l'assuré :</strong> ...</li>
-      <li><strong>Frais administratifs ou de gestion :</strong> ...</li>
-    </ul>
-  </section>
-
-  <div class="exclusions-encadre">
-    <h2>⚠️ Exclusions de garantie</h2>
-    <p>
-      Les situations suivantes ne sont pas couvertes par ce contrat d'assurance.
-      Leur survenance entraîne le refus de prise en charge par l'assureur :
-    </p>
-    <ul>
-      <li>...</li>
-    </ul>
-    <p>
-      Attention : le non-respect de certaines obligations par l'assuré
-      peut également entraîner une <strong>déchéance de garantie</strong>,
-      c'est-à-dire la perte du droit à indemnisation pour un sinistre donné.
-    </p>
-  </div>
-
-</div>
-
-Règles HTML :
-
-- Supprime entièrement les sections <section> pour lesquelles aucune information
-  n'est trouvée dans le document.
-- Ne supprime JAMAIS le bloc <div class="exclusions-encadre"> :
-  il est obligatoire quelle que soit la complétude du document analysé.
-- Pour la section "Frais mentionnés", ne conserve que les sous-éléments
-  (<li>) pour lesquels au moins un frais est identifié dans le document.
-  Supprime les sous-éléments vides.
-- Si le document ne mentionne aucune exclusion explicite, indique-le dans le bloc
-  avec la mention :
-  "Aucune exclusion explicitement mentionnée dans le document — se référer
-  aux exclusions légales applicables de plein droit (art. L. 113-1 du Code des assurances)."
-- Utilise uniquement les balises HTML suivantes :
-  <div>, <section>, <h1>, <h2>, <ul>, <li>, <strong>, <p>.
-- N'utilise pas de CSS, de JavaScript, de tableau, ni d'attributs HTML
-  autres que class="cga-assurance-summary" sur le div principal
-  et class="exclusions-encadre" sur le bloc encadré.
-- Chaque point important doit être placé dans une balise <li>.
-- Utilise <strong> uniquement pour mettre en évidence un délai de déclaration,
-  un montant de franchise, un plafond d'indemnisation, un frais identifié,
-  une condition de déchéance ou une exclusion critique.
+- Un titre `# Analyse des Conditions Générales d'Assurance`
+- Une section `##` par point listé ci-dessus, avec des listes à puces `-`.
+- Supprime toute section pour laquelle aucune information n'est trouvée dans le document.
+- La section "⚠️ Exclusions de garantie" est obligatoire (ne jamais la supprimer).
+  Si aucune exclusion n'est identifiée, indique :
+  "Aucune exclusion explicitement mentionnée — se référer aux exclusions légales
+  applicables de plein droit (art. L. 113-1 du Code des assurances)."
+  Termine cette section par la note :
+  "> ⚠️ Le non-respect de certaines obligations peut entraîner une **déchéance de garantie**,
+  c'est-à-dire la perte du droit à indemnisation pour le sinistre concerné."
