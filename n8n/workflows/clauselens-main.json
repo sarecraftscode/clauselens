@@ -1,5 +1,4 @@
 {
-  "name": "ClauseLens Main",
   "nodes": [
     {
       "parameters": {
@@ -267,7 +266,6 @@
       "name": "Call 'ClauseLens Sub Workflow'1"
     }
   ],
-  "pinData": {},
   "connections": {
     "Extract from File": {
       "main": [
@@ -343,16 +341,9 @@
       ]
     }
   },
-  "active": false,
-  "settings": {
-    "executionOrder": "v1",
-    "binaryMode": "separate"
-  },
-  "versionId": "c18074e2-20be-4a77-b1cf-b6f9d9807c8f",
+  "pinData": {},
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "592f66c5847207abda5a7374a69bd90a8011b8412dfd3af6df1130091d871d3b"
-  },
-  "id": "vslZY9ZAAe5v7VgU",
-  "tags": []
+  }
 }
