@@ -21,12 +21,17 @@ Consignes d'analyse :
 - Mets en avant : délais de déclaration, montants de franchise, plafonds par garantie,
   conditions suspensives, exclusions explicites et implicites, frais à la charge de l'assuré,
   et toute obligation dont le non-respect peut entraîner une déchéance de garantie.
+- Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte
+  de la section du document d'origine (numéro d'article, titre de section, ou page).
+  Exemple : Remboursement effectué sous 30 jours **(Art. 5.2)**
+  Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
 Format de sortie :
 
 Produis UNIQUEMENT du Markdown valide, sans texte avant ou après.
 Utilise **gras** uniquement pour : délai de déclaration, montant de franchise,
-plafond d'indemnisation, frais identifié, condition de déchéance, exclusion critique.
+plafond d'indemnisation, frais identifié, condition de déchéance, exclusion critique,
+et référence de section du document source.
 
 Structure :
 
