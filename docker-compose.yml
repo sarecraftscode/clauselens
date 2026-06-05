@@ -157,7 +157,7 @@ services:
   # Docling — conversion PDF → Markdown structuré
   # ─────────────────────────────────────────────────────────────────
   docling:
-    image: ghcr.io/ds4sd/docling-serve:v1.21.0
+    image: ghcr.io/ds4sd/docling-serve:v0.5.1
     restart: unless-stopped
     ports:
       - "5001:5001"
