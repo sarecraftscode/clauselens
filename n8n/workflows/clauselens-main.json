@@ -2,44 +2,6 @@
   "nodes": [
     {
       "parameters": {
-        "operation": "pdf",
-        "binaryPropertyName": "file",
-        "options": {}
-      },
-      "id": "74e89f2d-f691-48d8-a778-d05b23a0cfae",
-      "name": "Extract from File",
-      "type": "n8n-nodes-base.extractFromFile",
-      "typeVersion": 1,
-      "position": [
-        -224,
-        -560
-      ]
-    },
-    {
-      "parameters": {
-        "assignments": {
-          "assignments": [
-            {
-              "id": "a1b2c3d4-0004-4000-8000-000000000004",
-              "name": "contenuDocument",
-              "type": "string",
-              "value": "={{ $json.text }}"
-            }
-          ]
-        },
-        "options": {}
-      },
-      "id": "35fa52d3-0af1-47d9-82a8-35ec9a2a7441",
-      "name": "Expose Text",
-      "type": "n8n-nodes-base.set",
-      "typeVersion": 3.4,
-      "position": [
-        64,
-        -560
-      ]
-    },
-    {
-      "parameters": {
         "httpMethod": "POST",
         "path": "clause-lens",
         "responseMode": "responseNode",
@@ -264,31 +226,64 @@
       ],
       "id": "18a6518b-4947-475a-a3af-0b8418334638",
       "name": "Call 'ClauseLens Sub Workflow'1"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://docling:5001/v1alpha/convert/file",
+        "sendBody": true,
+        "contentType": "multipart-form-data",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "parameterType": "formBinaryData",
+              "name": "files",
+              "inputDataFieldName": "data"
+            }
+          ]
+        },
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "json"
+            }
+          }
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -480,
+        -560
+      ],
+      "id": "docling-http-request-001",
+      "name": "Docling — PDF to Markdown"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "docling-text-field",
+              "name": "text",
+              "value": "={{ $json.document.md_content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -224,
+        -560
+      ],
+      "id": "docling-expose-text-001",
+      "name": "Expose Markdown"
     }
   ],
   "connections": {
-    "Extract from File": {
-      "main": [
-        [
-          {
-            "node": "Expose Text",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Expose Text": {
-      "main": [
-        [
-          {
-            "node": "Call 'ClauseLens Sub Workflow'",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Webhook": {
       "main": [
         [
@@ -304,7 +299,7 @@
       "main": [
         [
           {
-            "node": "Extract from File",
+            "node": "Docling — PDF to Markdown",
             "type": "main",
             "index": 0
           }
@@ -334,6 +329,28 @@
         [
           {
             "node": "Respond to Webhook1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Docling — PDF to Markdown": {
+      "main": [
+        [
+          {
+            "node": "Expose Markdown",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Expose Markdown": {
+      "main": [
+        [
+          {
+            "node": "Call 'ClauseLens Sub Workflow'",
             "type": "main",
             "index": 0
           }

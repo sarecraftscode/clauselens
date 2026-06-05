@@ -227,6 +227,7 @@ Conditions Générales de Vente · d'Achat · d'Utilisation · d'Abonnement · d
 
 | Composant | Technologie | Pourquoi ce choix |
 |---|---|---|
+| 📄 Parsing PDF | Docling (IBM) | Conversion PDF → Markdown structuré, préserve tableaux et articles |
 | 🤖 Modèles LLM | Mistral (EU) · OpenAI | Hébergement européen, performance, coût maîtrisé, API standard |
 | ⚡ Proxy LLM | LiteLLM | Unifie tous les modèles, cache, guardrails, observabilité — open-source |
 | ⚙️ Orchestration | n8n | Workflows visuels, auto-hébergeable, pas de code pour les juristes |

@@ -153,6 +153,24 @@ services:
       retries: 5
       start_period: 30s
 
+  # ─────────────────────────────────────────────────────────────────
+  # Docling — conversion PDF → Markdown structuré
+  # ─────────────────────────────────────────────────────────────────
+  docling:
+    image: ghcr.io/ds4sd/docling-serve:latest
+    restart: unless-stopped
+    ports:
+      - "5001:5001"
+    networks: [ai-net]
+    environment:
+      DOCLING_SERVE_PORT: "5001"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:5001/health || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s
+
   # Importe les workflows JSON au démarrage puis s'arrête
   n8n-import:
     image: n8nio/n8n:latest

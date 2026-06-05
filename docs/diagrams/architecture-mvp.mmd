@@ -1,21 +1,30 @@
 sequenceDiagram
   participant UI as Interface Web
   participant OR as Orchestration
+  participant DK as Docling
   participant PR as Prompt Registry
   participant LP as LLM Proxy
   participant LLM as Modèles IA
 
-  UI->>OR: 1. Envoie le document
-  OR->>PR: 2. Récupère le prompt de détection
-  PR-->>OR: 3. Prompt de détection
-  OR->>LP: 4. Appel LLM — détection du type
-  LP->>LLM: 5. Requête
-  LLM-->>LP: 6. Type détecté (CGV, CGA, CGU…)
-  LP-->>OR: 7. Type détecté
-  OR->>PR: 8. Récupère le prompt d'extraction
-  PR-->>OR: 9. Prompt d'extraction
-  OR->>LP: 10. Appel LLM — extraction des clauses
-  LP->>LLM: 11. Requête
-  LLM-->>LP: 12. Clauses importantes
-  LP-->>OR: 13. Résumé structuré
-  OR-->>UI: 14. Résumé des clauses clés
+  UI->>OR: 1. Envoie le document (PDF ou texte)
+
+  alt PDF
+    OR->>DK: 2. Conversion PDF → Markdown
+    DK-->>OR: 3. Markdown structuré
+  end
+
+  OR->>PR: 4. Récupère le prompt de détection
+  PR-->>OR: 5. Prompt de détection
+  OR->>LP: 6. Appel LLM — détection du type
+  LP->>LLM: 7. Requête
+  LLM-->>LP: 8. Type détecté (CGV, CGA, CGU…)
+  LP-->>OR: 9. Type détecté
+
+  OR->>PR: 10. Récupère le prompt d'extraction
+  PR-->>OR: 11. Prompt d'extraction
+  OR->>LP: 12. Appel LLM — extraction des clauses
+  LP->>LLM: 13. Requête
+  LLM-->>LP: 14. Clauses importantes
+  LP-->>OR: 15. Résumé structuré
+
+  OR-->>UI: 16. Résumé des clauses clés
