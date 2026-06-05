@@ -223,6 +223,20 @@ Conditions Générales de Vente · d'Achat · d'Utilisation · d'Abonnement · d
 
 ---
 
+## Choix technologiques
+
+| Composant | Technologie | Pourquoi ce choix |
+|---|---|---|
+| 🤖 Modèles LLM | Mistral (EU) · OpenAI | Hébergement européen, performance, coût maîtrisé, API standard |
+| ⚡ Proxy LLM | LiteLLM | Unifie tous les modèles, cache, guardrails, observabilité — open-source |
+| ⚙️ Orchestration | n8n | Workflows visuels, auto-hébergeable, pas de code pour les juristes |
+| 📚 Observabilité | Langfuse | Spécialisé LLM, gestion des prompts versionnés, self-hosted EU |
+| 🗄️ Infrastructure | Docker + PostgreSQL + Redis | Stack standard, reproductible, déployable on-premise |
+
+> Tous les composants sont **open-source** et **auto-hébergeables** — pas de dépendance à un cloud propriétaire, données qui restent dans l'UE.
+
+---
+
 <!-- _class: divider -->
 
 ## Coûts
@@ -240,6 +254,21 @@ Durée d'exécution : **9,1 secondes**
 | 🔍 Détection du type | 20 988 | 3 | ~0 € |
 | 🤖 Extraction des clauses | 22 301 | 1 899 | ~0 € |
 | **Total** | **43 289** | **1 902** | **~0 € (< 0,01 €)** |
+
+---
+
+## Indicateurs de suivi
+
+| Indicateur | Mesure | Outil |
+|---|---|---|
+| ✅ **Qualité d'extraction** | Taux de validation des résultats par les juristes | Retours terrain |
+| 🎯 **Détection du type** | % de documents correctement classifiés | Langfuse — traces |
+| ⏱️ **Temps de réponse** | Durée d'analyse par document | Langfuse — latence |
+| 💸 **Coût par analyse** | Tokens consommés × tarif modèle | Langfuse — coût |
+| 😊 **Satisfaction utilisateur** | Retours du pool réduit d'utilisateurs | Questionnaire |
+| ❌ **Taux d'erreur** | Analyses en échec ou résultat vide | Langfuse — failure callback |
+
+> L'ensemble des traces (succès, échec, latence, coût) est centralisé dans **Langfuse**, consultable en temps réel par l'équipe.
 
 ---
 
