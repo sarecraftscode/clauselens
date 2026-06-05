@@ -239,6 +239,21 @@
               "parameterType": "formBinaryData",
               "name": "files",
               "inputDataFieldName": "data"
+            },
+            {
+              "parameterType": "formData",
+              "name": "to_formats",
+              "value": "md"
+            },
+            {
+              "parameterType": "formData",
+              "name": "do_ocr",
+              "value": "false"
+            },
+            {
+              "parameterType": "formData",
+              "name": "do_table_structure",
+              "value": "true"
             }
           ]
         },
@@ -266,7 +281,7 @@
             {
               "id": "docling-text-field",
               "name": "text",
-              "value": "={{ $json.document.md_content }}",
+              "value": "={{ $json.documents[0].md_content }}",
               "type": "string"
             }
           ]
