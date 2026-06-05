@@ -624,6 +624,15 @@ h1 em {
   gap: 0.75rem;
 }
 
+.result-timing {
+  margin-left: 12px;
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 400;
+  transition: color 0.35s;
+}
+
 .result-badge {
   font-family: "DM Mono", monospace;
   font-size: 0.62rem;

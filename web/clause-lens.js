@@ -264,7 +264,7 @@ btnAnalyse.addEventListener("click", async () => {
     resultContent.innerHTML = html;
     initAccordion();
 
-    document.getElementById("resultTiming").textContent = `⏱ ${elapsed} s`;
+    document.getElementById("resultTiming").textContent = `Temps d'exécution : ${elapsed} s`;
     resultBadge.textContent =
       activeMethod === "pdf"
         ? selectedFile.name
