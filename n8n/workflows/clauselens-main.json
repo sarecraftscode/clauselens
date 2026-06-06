@@ -6,13 +6,13 @@
         "binaryPropertyName": "file",
         "options": {}
       },
-      "id": "74e89f2d-f691-48d8-a778-d05b23a0cfae",
-      "name": "Extract from File",
+      "id": "93e40a8c-db67-4bd8-97e7-7bb197e2b38c",
+      "name": "Extract from File1",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        -224,
-        -560
+        -688,
+        1696
       ]
     },
     {
@@ -29,13 +29,13 @@
         },
         "options": {}
       },
-      "id": "35fa52d3-0af1-47d9-82a8-35ec9a2a7441",
-      "name": "Expose Text",
+      "id": "7932b4e6-485a-4488-83a7-6ed3256da205",
+      "name": "Expose Text1",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        64,
-        -560
+        -400,
+        1696
       ]
     },
     {
@@ -48,11 +48,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -672,
-        32
+        -1136,
+        2288
       ],
-      "id": "a5f24665-fee5-4a5e-b736-e5be373c7790",
-      "name": "Webhook",
+      "id": "709f35f1-6b0e-4d14-a179-b03ab22d39ef",
+      "name": "Webhook1",
       "webhookId": "f766c9d8-f771-4517-b3b9-6ef6a9d7c44c"
     },
     {
@@ -111,11 +111,11 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.3,
       "position": [
-        -400,
-        32
+        -864,
+        2288
       ],
-      "id": "171721ff-8541-4b4d-bad2-18c472ebd5f2",
-      "name": "Switch1"
+      "id": "8452081b-802b-42a0-bf41-5491bb2d865c",
+      "name": "Switch"
     },
     {
       "parameters": {
@@ -126,12 +126,12 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -256,
-        -704
+        -720,
+        1552
       ],
       "typeVersion": 1,
-      "id": "81bd2dc5-7207-4eff-a532-dd3bcadb0c24",
-      "name": "Sticky Note4"
+      "id": "64894426-7039-4c23-b067-7be57779fbed",
+      "name": "Sticky Note"
     },
     {
       "parameters": {
@@ -142,12 +142,12 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -208,
-        112
+        -672,
+        2368
       ],
       "typeVersion": 1,
-      "id": "56c11d41-0d07-4542-aeb2-08be754e8ac0",
-      "name": "Sticky Note5"
+      "id": "1de19d79-b6f8-43bd-9dc0-242054a7567b",
+      "name": "Sticky Note6"
     },
     {
       "parameters": {
@@ -158,11 +158,11 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.4,
       "position": [
-        496,
-        -560
+        32,
+        1696
       ],
-      "id": "07cfaeb0-f00a-4ad4-8249-f116b5739341",
-      "name": "Respond to Webhook"
+      "id": "8d903678-d1f3-4c42-9c04-8476729e274a",
+      "name": "Respond to Webhook2"
     },
     {
       "parameters": {
@@ -173,11 +173,11 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.4,
       "position": [
-        48,
-        320
+        -416,
+        2576
       ],
-      "id": "08162771-33fb-4423-aea9-9465d19565f0",
-      "name": "Respond to Webhook1"
+      "id": "6d6c9538-eaa4-4cad-9e64-2c0a3e55800e",
+      "name": "Respond to Webhook3"
     },
     {
       "parameters": {
@@ -218,11 +218,11 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        288,
-        -560
+        -176,
+        1696
       ],
-      "id": "10eec0f3-9b59-4931-98c4-33ac0f9671e0",
-      "name": "Call 'ClauseLens Sub Workflow'"
+      "id": "7d156127-361c-45f2-8380-312b2675c642",
+      "name": "Call 'ClauseLens Sub Workflow'2"
     },
     {
       "parameters": {
@@ -259,81 +259,81 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        -160,
-        320
+        -624,
+        2576
       ],
-      "id": "18a6518b-4947-475a-a3af-0b8418334638",
-      "name": "Call 'ClauseLens Sub Workflow'1"
+      "id": "aae6eb2c-f040-4e90-8709-5a6127341c18",
+      "name": "Call 'ClauseLens Sub Workflow'3"
     }
   ],
   "connections": {
-    "Extract from File": {
+    "Extract from File1": {
       "main": [
         [
           {
-            "node": "Expose Text",
+            "node": "Expose Text1",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Expose Text": {
+    "Expose Text1": {
       "main": [
         [
           {
-            "node": "Call 'ClauseLens Sub Workflow'",
+            "node": "Call 'ClauseLens Sub Workflow'2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Webhook": {
+    "Webhook1": {
       "main": [
         [
           {
-            "node": "Switch1",
+            "node": "Switch",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch1": {
+    "Switch": {
       "main": [
         [
           {
-            "node": "Extract from File",
+            "node": "Extract from File1",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Call 'ClauseLens Sub Workflow'1",
+            "node": "Call 'ClauseLens Sub Workflow'3",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Call 'ClauseLens Sub Workflow'": {
+    "Call 'ClauseLens Sub Workflow'2": {
       "main": [
         [
           {
-            "node": "Respond to Webhook",
+            "node": "Respond to Webhook2",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Call 'ClauseLens Sub Workflow'1": {
+    "Call 'ClauseLens Sub Workflow'3": {
       "main": [
         [
           {
-            "node": "Respond to Webhook1",
+            "node": "Respond to Webhook3",
             "type": "main",
             "index": 0
           }
