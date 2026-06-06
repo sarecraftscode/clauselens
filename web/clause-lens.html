@@ -157,170 +157,22 @@
           </button>
         </div>
 
-        <!-- AI Act + RGPD notice -->
+        <!-- AI Act notice -->
         <div class="rgpd-notice">
           <div class="rgpd-icon">🤖</div>
           <div class="rgpd-body">
             <p class="rgpd-title">Système d'analyse par intelligence artificielle</p>
             <p class="rgpd-text">
-              ClauseLens utilise un <strong>modèle d'intelligence artificielle</strong>
-              pour analyser votre document et en extraire les clauses importantes.
-              Les résultats sont générés automatiquement et présentés à titre indicatif —
-              ils ne constituent pas un avis juridique et ne dispensent pas d'une lecture du document original.
-            </p>
-            <p class="rgpd-text">
               Conformément au <strong>Règlement européen sur l'IA (EU AI Act)</strong>,
-              vous êtes informé(e) que cette analyse est réalisée par un système d'IA.
-              Votre document est transmis à un modèle IA pour traitement ponctuel et
-              <strong>n'est pas conservé</strong> à l'issue de l'analyse.
+              vous êtes informé(e) que cette analyse est réalisée par un
+              <strong>système d'intelligence artificielle</strong>.
+              Les résultats sont présentés à titre indicatif et ne constituent pas un avis juridique.
             </p>
-            <button class="rgpd-link" id="btnLegal">
-              Mentions légales &amp; RGPD →
-            </button>
           </div>
         </div>
       </div>
 
-      <!-- Legal modal -->
-      <div class="modal-overlay" id="modalOverlay">
-        <div
-          class="modal"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modalTitle"
-        >
-          <div class="modal-header">
-            <div>
-              <p class="section-label">Informations légales</p>
-              <h2 id="modalTitle">Mentions légales &amp; RGPD</h2>
-            </div>
-            <button class="modal-close" id="modalClose" aria-label="Fermer">
-              ✕
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="legal-block">
-              <h3>1. Éditeur du service</h3>
-              <p>
-                ClauseLens est un outil d'aide à la lecture des conditions
-                générales mis à disposition à titre informatif. Il ne constitue
-                pas un avis juridique et ne saurait remplacer la consultation
-                d'un professionnel du droit.
-              </p>
-            </div>
-            <div class="legal-block">
-              <h3>2. Traitement des données personnelles</h3>
-              <p>
-                Conformément au
-                <strong
-                  >Règlement Général sur la Protection des Données (RGPD — UE
-                  2016/679)</strong
-                >
-                et à la loi Informatique et Libertés modifiée, nous vous
-                informons que :
-              </p>
-              <ul>
-                <li>
-                  <strong>Aucune donnée personnelle</strong> contenue dans les
-                  documents soumis (nom, prénom, adresse postale ou
-                  électronique, numéro de téléphone, numéro de sécurité sociale,
-                  données bancaires, etc.) n'est collectée, enregistrée ou
-                  conservée par ClauseLens.
-                </li>
-                <li>
-                  Le contenu transmis est acheminé vers un moteur d'analyse IA
-                  pour un <strong>traitement ponctuel et transitoire</strong>.
-                  Il n'est stocké sur aucun serveur persistant à l'issue de
-                  l'opération.
-                </li>
-                <li>
-                  ClauseLens ne procède à <strong>aucun profilage</strong> et
-                  ne croise aucune donnée avec des tiers à des fins
-                  commerciales.
-                </li>
-              </ul>
-            </div>
-            <div class="legal-block">
-              <h3>3. Base légale du traitement</h3>
-              <p>
-                Le traitement repose sur l'<strong>intérêt légitime</strong> de
-                l'utilisateur (art. 6.1.f du RGPD) consistant à obtenir une
-                analyse rapide d'un document contractuel, ainsi que sur le
-                <strong>consentement implicite</strong> matérialisé par la
-                soumission volontaire du document.
-              </p>
-            </div>
-            <div class="legal-block">
-              <h3>4. Durée de conservation</h3>
-              <p>
-                Les données transmises ne sont
-                <strong>pas conservées au-delà du temps de traitement</strong>
-                nécessaire à la génération de l'analyse (quelques secondes).
-                Aucune copie n'est archivée.
-              </p>
-            </div>
-            <div class="legal-block">
-              <h3>5. Vos droits</h3>
-              <p>
-                Conformément au RGPD, vous disposez des droits suivants
-                concernant vos données personnelles :
-              </p>
-              <ul>
-                <li>
-                  <strong>Droit d'accès</strong> (art. 15) — obtenir
-                  confirmation du traitement et accéder à vos données.
-                </li>
-                <li>
-                  <strong>Droit de rectification</strong> (art. 16) — corriger
-                  des données inexactes.
-                </li>
-                <li>
-                  <strong>Droit à l'effacement</strong> (art. 17) — demander la
-                  suppression de vos données.
-                </li>
-                <li>
-                  <strong>Droit d'opposition</strong> (art. 21) — vous opposer à
-                  un traitement fondé sur l'intérêt légitime.
-                </li>
-                <li>
-                  <strong>Droit à la portabilité</strong> (art. 20) — recevoir
-                  vos données dans un format structuré.
-                </li>
-              </ul>
-              <p>
-                Ces droits s'exercent auprès du responsable du traitement. En
-                cas de litige, vous pouvez saisir la <strong>CNIL</strong> sur
-                <a href="https://www.cnil.fr" target="_blank" rel="noopener"
-                  >www.cnil.fr</a
-                >.
-              </p>
-            </div>
-            <div class="legal-block">
-              <h3>6. Recommandations à l'utilisateur</h3>
-              <ul>
-                <li>
-                  Vérifier que le document ne contient pas de données
-                  personnelles tierces sans leur consentement.
-                </li>
-                <li>
-                  Anonymiser le document si nécessaire avant toute soumission.
-                </li>
-                <li>
-                  Ne pas soumettre de documents contenant des informations
-                  médicales, bancaires ou judiciaires sensibles.
-                </li>
-              </ul>
-            </div>
-            <div class="legal-block">
-              <h3>7. Responsabilité</h3>
-              <p>
-                L'analyse fournie est générée par intelligence artificielle et
-                présentée à titre indicatif. ClauseLens ne peut être tenu
-                responsable des décisions prises sur la base de ces résultats.
-                La lecture du document original reste indispensable.
-              </p>
-            </div>
-          </div>
+      <!-- Supprimé : modal RGPD non applicable
           <div class="modal-footer">
             <button class="btn-analyse" id="modalCloseBtn">Fermer</button>
           </div>

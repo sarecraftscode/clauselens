@@ -16,30 +16,6 @@ themeToggle.addEventListener("click", () => {
   applyTheme();
 });
 
-/* ── Modal ── */
-const modalOverlay = document.getElementById("modalOverlay");
-const btnLegal = document.getElementById("btnLegal");
-const modalClose = document.getElementById("modalClose");
-const modalCloseBtn = document.getElementById("modalCloseBtn");
-
-function openModal() {
-  modalOverlay.classList.add("visible");
-  document.body.style.overflow = "hidden";
-}
-function closeModal() {
-  modalOverlay.classList.remove("visible");
-  document.body.style.overflow = "";
-}
-
-btnLegal.addEventListener("click", openModal);
-modalClose.addEventListener("click", closeModal);
-modalCloseBtn.addEventListener("click", closeModal);
-modalOverlay.addEventListener("click", (e) => {
-  if (e.target === modalOverlay) closeModal();
-});
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") closeModal();
-});
 
 /* ── App ── */
 const WEBHOOK_URL = "http://localhost:5678/webhook-test/clause-lens";
