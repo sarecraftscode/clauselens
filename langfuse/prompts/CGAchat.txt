@@ -16,96 +16,24 @@ Ta mission est d'extraire et résumer UNIQUEMENT les informations importantes co
 Consignes d'analyse :
 
 - Sois synthétique, clair et précis.
-- Reformule les informations pour un responsable achats ou un juriste non spécialisé.
-- Ignore toutes les sections non pertinentes au regard des points ci-dessus.
-- Si une information est absente du document, ne crée pas la section correspondante.
+- Reformule pour un responsable achats ou un juriste non spécialisé.
 - N'invente jamais d'informations absentes du document.
-- Mets en avant les délais, montants, pénalités, exclusions, obligations contractuelles ou conditions de déclenchement importantes.
+- Mets en avant : délais, montants, pénalités, exclusions, obligations contractuelles et conditions de déclenchement importantes.
+- Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte de la section du document d'origine (numéro d'article, titre de section, ou page).
+  Exemple : Remboursement effectué sous 30 jours **(Art. 5.2)**
+  Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
-Format de sortie obligatoire :
+Format de sortie :
 
-Tu dois produire UNIQUEMENT du HTML valide, sans Markdown, sans bloc de code et sans texte avant ou après le HTML.
+Produis UNIQUEMENT du Markdown valide, sans texte avant ou après. Utilise **gras** uniquement pour : délai, montant, pénalité, condition de déclenchement, limitation contractuelle, et référence de section du document source.
 
-Structure HTML attendue :
+Structure :
 
-<div class="cga-summary">
-  <h1>Analyse des Conditions Générales d'Achat</h1>
-
-  <section>
-    <h2>Identification de l'acheteur</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Objet du contrat et primauté sur les CGV fournisseur</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Conditions de facturation</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Modalités de paiement</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Délais et moyens de livraison</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contrôle qualité des produits</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Transfert de propriété</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Garanties en cas de non-livraison ou produit défectueux</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Confidentialité</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Juridiction compétente</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-</div>
-
-Règles HTML :
-
-- Supprime entièrement les sections pour lesquelles aucune information n'est trouvée dans le document.
-- Utilise uniquement les balises HTML suivantes : <div>, <section>, <h1>, <h2>, <ul>, <li>, <strong>, <p>.
-- N'utilise pas de CSS, de JavaScript, de tableau, ni d'attributs HTML autres que class="cga-summary" sur le div principal.
-- Chaque point important doit être placé dans une balise <li>.
-- Utilise <strong> uniquement pour mettre en évidence un délai, un montant, une pénalité, une condition de déclenchement ou une limitation contractuelle.
+- Un titre `# Analyse des Conditions Générales d'Achat`
+- Une section `##` par point listé ci-dessus, avec des listes à puces `-`.
+- Supprime toute section pour laquelle aucune information n'est trouvée dans le document.
+- La section "Garanties en cas de non-livraison ou produit défectueux" est obligatoire (ne jamais la supprimer).
+  Si aucune garantie n'est identifiée, indique :
+  "Aucune garantie explicitement mentionnée — se référer aux dispositions légales applicables (art. L. 217-1 et suivants du Code de la consommation et art. 1641 et suivants du Code civil)."
+  Termine cette section par la note :
+  > Le non-respect des délais de livraison ou la livraison de produits non conformes peut ouvrir droit à **résolution du contrat, remplacement ou indemnisation** selon les conditions stipulées.

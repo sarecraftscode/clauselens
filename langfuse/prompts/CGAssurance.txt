@@ -38,10 +38,10 @@ Structure :
 - Un titre `# Analyse des Conditions Générales d'Assurance`
 - Une section `##` par point listé ci-dessus, avec des listes à puces `-`.
 - Supprime toute section pour laquelle aucune information n'est trouvée dans le document.
-- La section "⚠️ Exclusions de garantie" est obligatoire (ne jamais la supprimer).
+- La section "Exclusions de garantie" est obligatoire (ne jamais la supprimer).
   Si aucune exclusion n'est identifiée, indique :
   "Aucune exclusion explicitement mentionnée — se référer aux exclusions légales
   applicables de plein droit (art. L. 113-1 du Code des assurances)."
   Termine cette section par la note :
-  "> ⚠️ Le non-respect de certaines obligations peut entraîner une **déchéance de garantie**,
+  "> Le non-respect de certaines obligations peut entraîner une **déchéance de garantie**,
   c'est-à-dire la perte du droit à indemnisation pour le sinistre concerné."

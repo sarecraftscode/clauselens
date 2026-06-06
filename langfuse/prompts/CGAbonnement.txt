@@ -11,61 +11,24 @@ Ta mission est d'extraire et résumer UNIQUEMENT les informations importantes co
 Consignes d'analyse :
 
 - Sois synthétique, clair et précis.
-- Reformule les informations pour un utilisateur non juriste.
-- Ignore toutes les sections non pertinentes au regard des points ci-dessus.
-- Si une information est absente du document, ne crée pas la section correspondante.
+- Reformule pour un utilisateur non juriste.
 - N'invente jamais d'informations absentes du document.
-- Mets en avant les délais de préavis, les dates butoir, les frais de résiliation, les conditions de reconduction et toute obligation contractuelle importante.
+- Mets en avant : délais de préavis, dates butoir, frais de résiliation, conditions de reconduction, et toute obligation contractuelle dont le non-respect peut avoir des conséquences financières ou juridiques.
+- Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte de la section du document d'origine (numéro d'article, titre de section, ou page).
+  Exemple : Résiliation possible sous 14 jours **(Art. 3.1)**
+  Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
-Format de sortie obligatoire :
+Format de sortie :
 
-Tu dois produire UNIQUEMENT du HTML valide, sans Markdown, sans bloc de code et sans texte avant ou après le HTML.
+Produis UNIQUEMENT du Markdown valide, sans texte avant ou après. Utilise **gras** uniquement pour : délai de préavis, date butoir, frais de résiliation identifié, condition de reconduction, limitation contractuelle, et référence de section du document source.
 
-Structure HTML attendue :
+Structure :
 
-<div class="cga-subscription-summary">
-  <h1>Analyse des Conditions Générales d'Abonnement</h1>
-
-  <section>
-    <h2>Durée d'engagement</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Renouvellement automatique</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Résiliation</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Période d'essai</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Évolution des tarifs</h2>
-    <ul>
-      <li>...</li>
-    </ul>
-  </section>
-</div>
-
-Règles HTML :
-
-- Supprime entièrement les sections pour lesquelles aucune information n'est trouvée dans le document.
-- Utilise uniquement les balises HTML suivantes : <div>, <section>, <h1>, <h2>, <ul>, <li>, <strong>, <p>.
-- N'utilise pas de CSS, de JavaScript, de tableau, ni d'attributs HTML autres que class="cga-subscription-summary" sur le div principal.
-- Chaque point important doit être placé dans une balise <li>.
-- Utilise <strong> uniquement pour mettre en évidence un délai de préavis, une date butoir, un montant de frais, une condition de reconduction ou une limitation contractuelle.
+- Un titre `# Analyse des Conditions Générales d'Abonnement`
+- Une section `##` par point listé ci-dessus, avec des listes à puces `-`.
+- Supprime toute section pour laquelle aucune information n'est trouvée dans le document.
+- La section "Résiliation" est obligatoire (ne jamais la supprimer).
+  Si aucune condition de résiliation n'est identifiée, indique :
+  "Aucune condition de résiliation explicitement mentionnée — se référer aux dispositions légales applicables (art. L. 215-1 du Code de la consommation pour les contrats à reconduction tacite)."
+  Termine cette section par la note :
+  > Le non-respect des délais de préavis peut entraîner une **reconduction automatique du contrat** et engager l'abonné pour une nouvelle période ferme.
