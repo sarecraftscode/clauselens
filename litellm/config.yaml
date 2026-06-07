@@ -24,11 +24,23 @@ model_list:
       model: anthropic/claude-opus-4-8
       api_key: os.environ/ANTHROPIC_API_KEY
 
-  # Uncomment to enable Groq
-  # - model_name: llama-3.3-70b
-  #   litellm_params:
-  #     model: groq/llama-3.3-70b-versatile
-  #     api_key: os.environ/GROQ_API_KEY
+  - model_name: mistral-small-latest
+    litellm_params:
+      model: mistral-small-latest
+      custom_llm_provider: mistral
+      api_key: os.environ/MISTRAL_API_KEY
+
+  - model_name: mistral-small-2506
+    litellm_params:
+      model: mistral-small-2506
+      custom_llm_provider: mistral
+      api_key: os.environ/MISTRAL_API_KEY
+
+  - model_name: mistralai/mistral-small-3.2-24b-instruct-2506
+    litellm_params:
+      model: mistralai/mistral-small-3.2-24b-instruct-2506
+      custom_llm_provider: openrouter
+      api_key: os.environ/OPENROUTER_API_KEY
 
 general_settings:
   master_key: os.environ/LITELLM_MASTER_KEY
