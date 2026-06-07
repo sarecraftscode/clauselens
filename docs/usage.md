@@ -31,23 +31,23 @@ Le workflow principal attend les requêtes via un webhook. Deux modes existent s
 
 ## 2. Ouvrir l'interface
 
-Ouvrez le fichier `web/clause-radar.html` directement dans votre navigateur :
+Ouvrez le fichier `web/clause-lens.html` directement dans votre navigateur :
 
 ```bash
 # Linux
-xdg-open web/clause-radar.html
+xdg-open web/clause-lens.html
 
 # macOS
-open web/clause-radar.html
+open web/clause-lens.html
 ```
 
 Ou glissez-déposez le fichier dans votre navigateur.
 
 > **Note — URL du webhook** : la page utilise actuellement `webhook-test/clause-lens`.  
-> Le webhook du workflow est configuré sur le path `clause-radar`.  
-> Si la page ne reçoit pas de réponse, vérifiez que les deux correspondent, ou corrigez l'URL dans `web/clause-radar.html` ligne 1522 :
+> Le webhook du workflow est configuré sur le path `clause-lens`.  
+> Si la page ne reçoit pas de réponse, vérifiez que les deux correspondent, ou corrigez l'URL dans `web/clause-lens.html` ligne 1522 :
 > ```js
-> const WEBHOOK_URL = "http://localhost:5678/webhook-test/clause-radar";
+> const WEBHOOK_URL = "http://localhost:5678/webhook-test/clause-lens";
 > ```
 
 ---

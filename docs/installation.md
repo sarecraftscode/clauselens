@@ -15,14 +15,6 @@
 
 > **Docker Compose v2** — les commandes de ce guide utilisent `docker compose` (sans tiret). Si vous avez l'ancienne version (`docker-compose`), mettez à jour vers le plugin v2.
 
-### Ressources machine recommandées
-
-| Ressource | Minimum | Recommandé |
-|---|---|---|
-| RAM | 4 Go | 8 Go |
-| Disque libre | 5 Go | 10 Go |
-| CPU | 2 cœurs | 4 cœurs |
-
 ### Clés API
 
 Au moins une clé API pour un provider LLM :
