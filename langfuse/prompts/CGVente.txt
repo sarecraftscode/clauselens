@@ -18,7 +18,7 @@ Consignes d'analyse :
 - N'invente jamais d'informations absentes du document.
 - Mets en avant : délais, frais, limites, exclusions, obligations et conditions importantes.
 - Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte de la section du document d'origine (numéro d'article, titre de section, ou page).
-  Exemple : Remboursement effectué sous 30 jours **(Art. 5.2)**
+  Exemple : Remboursement effectué sous 30 jours (Art. 5.2)
   Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
 Format de sortie :
@@ -33,6 +33,4 @@ Structure :
 - La section "Droit de rétractation" est obligatoire (ne jamais la supprimer).
   Si aucune information n'est identifiée, indique :
   "Aucune clause relative au droit de rétractation explicitement mentionnée dans le document — les dispositions légales s'appliquent de plein droit (art. L. 221-18 et suivants du Code de la consommation : **délai de 14 jours** à compter de la réception du bien ou de l'acceptation de l'offre pour les services)."
-  Termine cette section par la note :
-  > Le non-respect du droit de rétractation par le vendeur expose ce dernier à une **prolongation automatique du délai de rétractation** jusqu'à 12 mois (art. L. 221-20 du Code de la consommation).
 - En fin de document, ajoute une section `## Informations absentes du document` listant les points ci-dessus pour lesquels aucune information n'a été trouvée. Si toutes les sections sont renseignées, omet cette section.

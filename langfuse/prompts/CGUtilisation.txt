@@ -17,7 +17,7 @@ Consignes d'analyse :
 - N'invente jamais d'informations absentes du document.
 - Mets en avant : interdictions explicites, droits cédés à la plateforme, données collectées et leur usage, conditions de suspension, plafonds de responsabilité, et toute obligation imposée à l'utilisateur.
 - Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte de la section du document d'origine (numéro d'article, titre de section, ou page).
-  Exemple : Remboursement effectué sous 30 jours **(Art. 5.2)**
+  Exemple : Remboursement effectué sous 30 jours (Art. 5.2)
   Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
 Format de sortie :
@@ -32,5 +32,3 @@ Structure :
 - La section "Traitement des données personnelles (RGPD)" est obligatoire (ne jamais la supprimer).
   Si aucune information relative aux données personnelles n'est identifiée, indique :
   "Aucune clause relative au traitement des données personnelles explicitement mentionnée dans le document — les dispositions du RGPD (Règlement UE 2016/679) et de la loi Informatique et Libertés s'appliquent de plein droit."
-  Termine cette section par la note :
-  > L'utilisateur dispose d'un droit d'accès, de rectification, d'effacement et de portabilité de ses données. Toute collecte de **données sensibles** sans consentement explicite est interdite au titre de l'art. 9 du RGPD.

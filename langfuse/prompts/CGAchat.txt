@@ -35,5 +35,3 @@ Structure :
 - La section "Garanties en cas de non-livraison ou produit défectueux" est obligatoire (ne jamais la supprimer).
   Si aucune garantie n'est identifiée, indique :
   "Aucune garantie explicitement mentionnée — se référer aux dispositions légales applicables (art. L. 217-1 et suivants du Code de la consommation et art. 1641 et suivants du Code civil)."
-  Termine cette section par la note :
-  > Le non-respect des délais de livraison ou la livraison de produits non conformes peut ouvrir droit à **résolution du contrat, remplacement ou indemnisation** selon les conditions stipulées.

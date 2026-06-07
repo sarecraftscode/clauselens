@@ -33,5 +33,3 @@ Structure :
 - La section "Exclusions de garantie" est obligatoire (ne jamais la supprimer).
   Si aucune exclusion n'est identifiée, indique :
   "Aucune exclusion explicitement mentionnée dans le document — se référer aux exclusions légales applicables de plein droit (art. 1641 et suivants du Code civil pour les vices cachés, et art. L. 217-1 et suivants du Code de la consommation pour la garantie légale de conformité)."
-  Termine cette section par la note :
-  > Le non-respect des conditions d'utilisation ou l'absence de déclaration dans les délais impartis peut entraîner la **perte du bénéfice de la garantie** pour le défaut concerné.

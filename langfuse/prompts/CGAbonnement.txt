@@ -30,5 +30,3 @@ Structure :
 - La section "Résiliation" est obligatoire (ne jamais la supprimer).
   Si aucune condition de résiliation n'est identifiée, indique :
   "Aucune condition de résiliation explicitement mentionnée — se référer aux dispositions légales applicables (art. L. 215-1 du Code de la consommation pour les contrats à reconduction tacite)."
-  Termine cette section par la note :
-  > Le non-respect des délais de préavis peut entraîner une **reconduction automatique du contrat** et engager l'abonné pour une nouvelle période ferme.

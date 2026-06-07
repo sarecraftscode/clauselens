@@ -18,7 +18,7 @@ Consignes d'analyse :
 - N'invente jamais d'informations absentes du document.
 - Mets en avant : conditions d'éligibilité, dépôts de garantie, délais de restitution, état des lieux, obligations d'entretien, frais de remise en état, taux de pénalité, plafonds de responsabilité, et toute clause transférant un risque du bailleur vers le locataire.
 - Pour chaque clause identifiée, indique entre parenthèses en gras la référence exacte de la section du document d'origine (numéro d'article, titre de section, ou page).
-  Exemple : Remboursement effectué sous 30 jours **(Art. 5.2)**
+  Exemple : Remboursement effectué sous 30 jours (Art. 5.2)
   Si aucune référence n'est identifiable pour une clause, omet les parenthèses.
 
 Format de sortie :
@@ -35,5 +35,3 @@ Structure :
 - La section "Responsabilité et transfert de risques" est obligatoire (ne jamais la supprimer).
   Si aucune clause de responsabilité ou de transfert de risque n'est identifiée, indique :
   "Aucune clause de responsabilité ou de transfert de risque explicitement mentionnée dans le document — les dispositions légales supplétives du Code civil s'appliquent de plein droit (art. 1719 et suivants)."
-  Termine cette section par la note :
-  > Certaines clauses peuvent transférer au locataire des risques normalement à la charge du bailleur. Vérifiez systématiquement votre **couverture d'assurance** avant la prise en charge du bien loué.
