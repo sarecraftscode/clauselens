@@ -1,5 +1,38 @@
 {
+  "name": "ClauseLens Main",
   "nodes": [
+    {
+      "parameters": {
+        "content": "### 📚 Workflow déclenché par la soumission d'un document pdf",
+        "height": 508,
+        "width": 940,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -720,
+        1552
+      ],
+      "typeVersion": 1,
+      "id": "64894426-7039-4c23-b067-7be57779fbed",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "content": "### 📚 Workflow déclenché par la soumission d'un texte",
+        "height": 508,
+        "width": 940,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -672,
+        2368
+      ],
+      "typeVersion": 1,
+      "id": "1de19d79-b6f8-43bd-9dc0-242054a7567b",
+      "name": "Sticky Note6"
+    },
     {
       "parameters": {
         "operation": "pdf",
@@ -7,7 +40,7 @@
         "options": {}
       },
       "id": "93e40a8c-db67-4bd8-97e7-7bb197e2b38c",
-      "name": "Extract from File1",
+      "name": "Lecture du pdf",
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
@@ -30,13 +63,129 @@
         "options": {}
       },
       "id": "7932b4e6-485a-4488-83a7-6ed3256da205",
-      "name": "Expose Text1",
+      "name": "Extraction du texte",
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
         -400,
         1696
       ]
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "LosAyB10pTjm7Fwo",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/LosAyB10pTjm7Fwo",
+          "cachedResultName": "ClauseLens Sub Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contenuDocument": "={{ $json.body.text }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "contenuDocument",
+              "displayName": "contenuDocument",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -624,
+        2576
+      ],
+      "id": "aae6eb2c-f040-4e90-8709-5a6127341c18",
+      "name": "Appel du workflow pour le cas d'un texte"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "LosAyB10pTjm7Fwo",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/LosAyB10pTjm7Fwo",
+          "cachedResultName": "ClauseLens Sub Workflow"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "contenuDocument": "={{ $json.contenuDocument }}"
+          },
+          "matchingColumns": [
+            "contenuDocument"
+          ],
+          "schema": [
+            {
+              "id": "contenuDocument",
+              "displayName": "contenuDocument",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -176,
+        1696
+      ],
+      "id": "7d156127-361c-45f2-8380-312b2675c642",
+      "name": "Appel du workflow pour le cas d'un pdf"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        -416,
+        2576
+      ],
+      "id": "6d6c9538-eaa4-4cad-9e64-2c0a3e55800e",
+      "name": "Réponse finale dans le cas d'un texte"
+    },
+    {
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.output }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.4,
+      "position": [
+        32,
+        1696
+      ],
+      "id": "8d903678-d1f3-4c42-9c04-8476729e274a",
+      "name": "Réponse finale dans le cas d'un pdf"
     },
     {
       "parameters": {
@@ -48,11 +197,11 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -1136,
+        -1264,
         2288
       ],
       "id": "709f35f1-6b0e-4d14-a179-b03ab22d39ef",
-      "name": "Webhook1",
+      "name": "Ecoute des demandes utilisateurs",
       "webhookId": "f766c9d8-f771-4517-b3b9-6ef6a9d7c44c"
     },
     {
@@ -111,229 +260,82 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.3,
       "position": [
-        -864,
+        -960,
         2288
       ],
       "id": "8452081b-802b-42a0-bf41-5491bb2d865c",
-      "name": "Switch"
-    },
-    {
-      "parameters": {
-        "content": "### 📚 Workflow déclenché par la soumission d'un document pdf",
-        "height": 508,
-        "width": 940,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -720,
-        1552
-      ],
-      "typeVersion": 1,
-      "id": "64894426-7039-4c23-b067-7be57779fbed",
-      "name": "Sticky Note"
-    },
-    {
-      "parameters": {
-        "content": "### 📚 Workflow déclenché par la soumission d'un texte",
-        "height": 508,
-        "width": 940,
-        "color": 4
-      },
-      "type": "n8n-nodes-base.stickyNote",
-      "position": [
-        -672,
-        2368
-      ],
-      "typeVersion": 1,
-      "id": "1de19d79-b6f8-43bd-9dc0-242054a7567b",
-      "name": "Sticky Note6"
-    },
-    {
-      "parameters": {
-        "respondWith": "text",
-        "responseBody": "={{ $json.output }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.4,
-      "position": [
-        32,
-        1696
-      ],
-      "id": "8d903678-d1f3-4c42-9c04-8476729e274a",
-      "name": "Respond to Webhook2"
-    },
-    {
-      "parameters": {
-        "respondWith": "text",
-        "responseBody": "={{ $json.output }}",
-        "options": {}
-      },
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.4,
-      "position": [
-        -416,
-        2576
-      ],
-      "id": "6d6c9538-eaa4-4cad-9e64-2c0a3e55800e",
-      "name": "Respond to Webhook3"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "LosAyB10pTjm7Fwo",
-          "mode": "list",
-          "cachedResultUrl": "/workflow/LosAyB10pTjm7Fwo",
-          "cachedResultName": "ClauseLens Sub Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "contenuDocument": "={{ $json.contenuDocument }}"
-          },
-          "matchingColumns": [
-            "contenuDocument"
-          ],
-          "schema": [
-            {
-              "id": "contenuDocument",
-              "displayName": "contenuDocument",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "options": {
-          "waitForSubWorkflow": true
-        }
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.3,
-      "position": [
-        -176,
-        1696
-      ],
-      "id": "7d156127-361c-45f2-8380-312b2675c642",
-      "name": "Call 'ClauseLens Sub Workflow'2"
-    },
-    {
-      "parameters": {
-        "workflowId": {
-          "__rl": true,
-          "value": "LosAyB10pTjm7Fwo",
-          "mode": "list",
-          "cachedResultUrl": "/workflow/LosAyB10pTjm7Fwo",
-          "cachedResultName": "ClauseLens Sub Workflow"
-        },
-        "workflowInputs": {
-          "mappingMode": "defineBelow",
-          "value": {
-            "contenuDocument": "={{ $json.body.text }}"
-          },
-          "matchingColumns": [],
-          "schema": [
-            {
-              "id": "contenuDocument",
-              "displayName": "contenuDocument",
-              "required": false,
-              "defaultMatch": false,
-              "display": true,
-              "canBeUsedToMatch": true,
-              "type": "string",
-              "removed": false
-            }
-          ],
-          "attemptToConvertTypes": false,
-          "convertFieldsToString": true
-        },
-        "options": {}
-      },
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1.3,
-      "position": [
-        -624,
-        2576
-      ],
-      "id": "aae6eb2c-f040-4e90-8709-5a6127341c18",
-      "name": "Call 'ClauseLens Sub Workflow'3"
+      "name": "Routage en fonction du choix utilisateur"
     }
   ],
+  "pinData": {},
   "connections": {
-    "Extract from File1": {
+    "Lecture du pdf": {
       "main": [
         [
           {
-            "node": "Expose Text1",
+            "node": "Extraction du texte",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Expose Text1": {
+    "Extraction du texte": {
       "main": [
         [
           {
-            "node": "Call 'ClauseLens Sub Workflow'2",
+            "node": "Appel du workflow pour le cas d'un pdf",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Webhook1": {
+    "Appel du workflow pour le cas d'un texte": {
       "main": [
         [
           {
-            "node": "Switch",
+            "node": "Réponse finale dans le cas d'un texte",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Switch": {
+    "Appel du workflow pour le cas d'un pdf": {
       "main": [
         [
           {
-            "node": "Extract from File1",
+            "node": "Réponse finale dans le cas d'un pdf",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ecoute des demandes utilisateurs": {
+      "main": [
+        [
+          {
+            "node": "Routage en fonction du choix utilisateur",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Routage en fonction du choix utilisateur": {
+      "main": [
+        [
+          {
+            "node": "Lecture du pdf",
             "type": "main",
             "index": 0
           }
         ],
         [
           {
-            "node": "Call 'ClauseLens Sub Workflow'3",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call 'ClauseLens Sub Workflow'2": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook2",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Call 'ClauseLens Sub Workflow'3": {
-      "main": [
-        [
-          {
-            "node": "Respond to Webhook3",
+            "node": "Appel du workflow pour le cas d'un texte",
             "type": "main",
             "index": 0
           }
@@ -341,9 +343,16 @@
       ]
     }
   },
-  "pinData": {},
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "50900e7f-f34e-49e5-9667-a820ec93c66a",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "592f66c5847207abda5a7374a69bd90a8011b8412dfd3af6df1130091d871d3b"
-  }
+  },
+  "id": "vslZY9ZAAe5v7VgU",
+  "tags": []
 }
