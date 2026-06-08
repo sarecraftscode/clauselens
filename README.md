@@ -31,6 +31,7 @@ Générez les secrets et renseignez-les **directement dans `.env`** (ne pas util
 | `LANGFUSE_ENCRYPTION_KEY` | `openssl rand -hex 32` ⚠️ hex uniquement |
 | `N8N_ENCRYPTION_KEY` | `openssl rand -base64 32` |
 | `LITELLM_MASTER_KEY` | Renseigner votre valeur |
+| `MISTRAL_API_KEY` | Renseigner votre clé API Mistral (cf https://admin.mistral.ai/) |
 
 > `LANGFUSE_ENCRYPTION_KEY` doit être en **hexadécimal** 
 
