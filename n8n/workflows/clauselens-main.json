@@ -4,14 +4,14 @@
     {
       "parameters": {
         "content": "### 📚 Workflow déclenché par la soumission d'un document pdf",
-        "height": 508,
+        "height": 316,
         "width": 940,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -720,
-        1552
+        -704,
+        1920
       ],
       "typeVersion": 1,
       "id": "64894426-7039-4c23-b067-7be57779fbed",
@@ -20,14 +20,14 @@
     {
       "parameters": {
         "content": "### 📚 Workflow déclenché par la soumission d'un texte",
-        "height": 508,
-        "width": 940,
+        "height": 300,
+        "width": 972,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -672,
-        2368
+        -720,
+        2352
       ],
       "typeVersion": 1,
       "id": "1de19d79-b6f8-43bd-9dc0-242054a7567b",
@@ -44,8 +44,8 @@
       "type": "n8n-nodes-base.extractFromFile",
       "typeVersion": 1,
       "position": [
-        -688,
-        1696
+        -640,
+        2016
       ]
     },
     {
@@ -68,7 +68,7 @@
       "typeVersion": 3.4,
       "position": [
         -400,
-        1696
+        2016
       ]
     },
     {
@@ -106,8 +106,8 @@
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1.3,
       "position": [
-        -624,
-        2576
+        -608,
+        2464
       ],
       "id": "aae6eb2c-f040-4e90-8709-5a6127341c18",
       "name": "Appel du workflow pour le cas d'un texte"
@@ -152,7 +152,7 @@
       "typeVersion": 1.3,
       "position": [
         -176,
-        1696
+        2016
       ],
       "id": "7d156127-361c-45f2-8380-312b2675c642",
       "name": "Appel du workflow pour le cas d'un pdf"
@@ -166,8 +166,8 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.4,
       "position": [
-        -416,
-        2576
+        32,
+        2464
       ],
       "id": "6d6c9538-eaa4-4cad-9e64-2c0a3e55800e",
       "name": "Réponse finale dans le cas d'un texte"
@@ -181,8 +181,8 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.4,
       "position": [
-        32,
-        1696
+        48,
+        2016
       ],
       "id": "8d903678-d1f3-4c42-9c04-8476729e274a",
       "name": "Réponse finale dans le cas d'un pdf"
@@ -197,8 +197,8 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -1264,
-        2288
+        -1120,
+        2256
       ],
       "id": "709f35f1-6b0e-4d14-a179-b03ab22d39ef",
       "name": "Ecoute des demandes utilisateurs",
@@ -260,8 +260,8 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.3,
       "position": [
-        -960,
-        2288
+        -880,
+        2256
       ],
       "id": "8452081b-802b-42a0-bf41-5491bb2d865c",
       "name": "Routage en fonction du choix utilisateur"
@@ -348,7 +348,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "50900e7f-f34e-49e5-9667-a820ec93c66a",
+  "versionId": "d95208d6-2222-401f-8deb-a198b913e3eb",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "592f66c5847207abda5a7374a69bd90a8011b8412dfd3af6df1130091d871d3b"

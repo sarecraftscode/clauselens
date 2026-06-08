@@ -74,14 +74,14 @@
     {
       "parameters": {
         "content": "### 📚 Phase de détection du type de document",
-        "height": 588,
-        "width": 684,
+        "height": 428,
+        "width": 700,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -4208,
-        -304
+        -4224,
+        -160
       ],
       "typeVersion": 1,
       "id": "5bd73638-86c6-4c8d-8d5c-846d5811074a",
@@ -108,7 +108,7 @@
         "promptType": "define",
         "text": "=# Contenu du document\n\n{{ $('When Executed by Another Workflow').item.json.contenuDocument }}",
         "options": {
-          "systemMessage": "={{ $json.prompt }}\n\nReturn raw Markdown only.\nDo not wrap the output in ```markdown fences.\nDo not return a code block."
+          "systemMessage": "={{ $json.prompt }}\n\ndo not output as markdown code.Only output the markdown text"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -206,14 +206,14 @@
     {
       "parameters": {
         "content": "### 📚 Retours en cas de documents non gérés",
-        "height": 316,
-        "width": 460,
+        "height": 220,
+        "width": 364,
         "color": 3
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
         -3312,
-        -336
+        -304
       ],
       "typeVersion": 1,
       "id": "b72c52d5-b83f-4f17-a39a-2f40c1436cb9",
@@ -387,7 +387,7 @@
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "d0f6a779-e88f-41d8-902b-40b2f10ad197",
+  "versionId": "609062c7-bcb6-485e-946a-264d74e1c5ec",
   "meta": {
     "templateCredsSetupCompleted": true,
     "instanceId": "592f66c5847207abda5a7374a69bd90a8011b8412dfd3af6df1130091d871d3b"
